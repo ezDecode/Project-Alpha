@@ -8,7 +8,6 @@ const App = () => {
 
   return (
     <div className="font-['OverusedGrotesk']">
-      {/* Hero Section */}
       <HeroSection />
     </div>
   )
