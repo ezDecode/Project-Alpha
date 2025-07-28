@@ -49,7 +49,7 @@ export const useSmoothScroll = () => {
         e.preventDefault()
         const element = document.querySelector(href)
         if (element) {
-          lenis.scrollTo(element, { offset: 0, duration: 1.5 })
+          lenis.scrollTo(element as HTMLElement, { offset: 0, duration: 1.5 })
         }
       }
     }
@@ -67,7 +67,7 @@ export const useSmoothScroll = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.querySelector(sectionId)
     if (element && lenisRef.current) {
-      lenisRef.current.scrollTo(element, { offset: 0, duration: 1.5 })
+      lenisRef.current.scrollTo(element as HTMLElement, { offset: 0, duration: 1.5 })
     }
   }
 
