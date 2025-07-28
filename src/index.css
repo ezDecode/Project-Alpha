@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Import Roslindale fonts */
+@import url('/fonts/Roslindale/style.css');
+
 /* Global Reset for Full Viewport */
 * {
   box-sizing: border-box;
@@ -22,57 +25,122 @@ html {
 /* OverusedGrotesk Font Family */
 @font-face {
   font-family: 'OverusedGrotesk';
-  src: url('/fonts/OverusedGrotesk-Light.ttf') format('truetype');
+  src: url('/fonts/Overused/OverusedGrotesk-Light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'OverusedGrotesk';
-  src: url('/fonts/OverusedGrotesk-Book.ttf') format('truetype');
+  src: url('/fonts/Overused/OverusedGrotesk-Book.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'OverusedGrotesk';
-  src: url('/fonts/OverusedGrotesk-Roman.ttf') format('truetype');
+  src: url('/fonts/Overused/OverusedGrotesk-Roman.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'OverusedGrotesk';
-  src: url('/fonts/OverusedGrotesk-Medium.ttf') format('truetype');
+  src: url('/fonts/Overused/OverusedGrotesk-Medium.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'OverusedGrotesk';
-  src: url('/fonts/OverusedGrotesk-SemiBold.ttf') format('truetype');
+  src: url('/fonts/Overused/OverusedGrotesk-SemiBold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'OverusedGrotesk';
-  src: url('/fonts/OverusedGrotesk-Bold.ttf') format('truetype');
+  src: url('/fonts/Overused/OverusedGrotesk-Bold.ttf') format('truetype');
   font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'OverusedGrotesk';
-  src: url('/fonts/OverusedGrotesk-ExtraBold.ttf') format('truetype');
+  src: url('/fonts/Overused/OverusedGrotesk-ExtraBold.ttf') format('truetype');
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'OverusedGrotesk';
-  src: url('/fonts/OverusedGrotesk-Black.ttf') format('truetype');
+  src: url('/fonts/Overused/OverusedGrotesk-Black.ttf') format('truetype');
   font-weight: 950;
+  font-style: normal;
+}
+
+/* Roslindale Font Family - Key Variants */
+@font-face {
+  font-family: 'Roslindale';
+  src: url('/fonts/Roslindale/Roslindale-DisplayRegular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roslindale';
+  src: url('/fonts/Roslindale/Roslindale-DisplayMedium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roslindale';
+  src: url('/fonts/Roslindale/Roslindale-DisplaySemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roslindale';
+  src: url('/fonts/Roslindale/Roslindale-DisplayBold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roslindale';
+  src: url('/fonts/Roslindale/Roslindale-DisplayBlack.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Roslindale Text variants for body text */
+@font-face {
+  font-family: 'RoslindaleText';
+  src: url('/fonts/Roslindale/Roslindale-TextRegular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RoslindaleText';
+  src: url('/fonts/Roslindale/Roslindale-TextMedium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RoslindaleText';
+  src: url('/fonts/Roslindale/Roslindale-TextSemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RoslindaleText';
+  src: url('/fonts/Roslindale/Roslindale-TextBold.woff') format('woff');
+  font-weight: 700;
   font-style: normal;
 }
 

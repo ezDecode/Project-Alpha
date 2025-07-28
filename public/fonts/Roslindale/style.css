@@ -4,7 +4,7 @@
     font-family: 'Roslindale Deck Narrow Regular';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Deck Narrow Regular'), url('Roslindale-DeckNarrowRegular-Testing.woff') format('woff');
+    src: local('Roslindale Deck Narrow Regular'), url('Roslindale-DeckNarrowRegular.woff') format('woff');
     }
     
 
@@ -12,7 +12,7 @@
     font-family: 'Roslindale Display Condensed Regular';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Condensed Regular'), url('Roslindale-DisplayCondensedRegular-Testing.woff') format('woff');
+    src: local('Roslindale Display Condensed Regular'), url('Roslindale-DisplayCondensedRegular.woff') format('woff');
     }
     
 
@@ -20,7 +20,7 @@
     font-family: 'Roslindale Display Narrow Regular';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Narrow Regular'), url('Roslindale-DisplayNarrowRegular-Testing.woff') format('woff');
+    src: local('Roslindale Display Narrow Regular'), url('Roslindale-DisplayNarrowRegular.woff') format('woff');
     }
     
 
@@ -28,7 +28,7 @@
     font-family: 'Roslindale Display Regular';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Regular'), url('Roslindale-DisplayRegular-Testing.woff') format('woff');
+    src: local('Roslindale Display Regular'), url('Roslindale-DisplayRegular.woff') format('woff');
     }
     
 
@@ -36,7 +36,7 @@
     font-family: 'Roslindale Text Regular';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Text Regular'), url('Roslindale-TextRegular-Testing.woff') format('woff');
+    src: local('Roslindale Text Regular'), url('Roslindale-TextRegular.woff') format('woff');
     }
     
 
@@ -44,7 +44,7 @@
     font-family: 'Roslindale Deck Narrow Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Deck Narrow Italic'), url('Roslindale-DeckNarrowItalic-Testing.woff') format('woff');
+    src: local('Roslindale Deck Narrow Italic'), url('Roslindale-DeckNarrowItalic.woff') format('woff');
     }
     
 
@@ -52,7 +52,7 @@
     font-family: 'Roslindale Display Condensed Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Condensed Italic'), url('Roslindale-DisplayCondensedItalic-Testing.woff') format('woff');
+    src: local('Roslindale Display Condensed Italic'), url('Roslindale-DisplayCondensedItalic.woff') format('woff');
     }
     
 
@@ -60,7 +60,7 @@
     font-family: 'Roslindale Text Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Text Italic'), url('Roslindale-TextItalic-Testing.woff') format('woff');
+    src: local('Roslindale Text Italic'), url('Roslindale-TextItalic.woff') format('woff');
     }
     
 
@@ -68,7 +68,7 @@
     font-family: 'Roslindale Display Condensed Extra Light';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Condensed Extra Light'), url('Roslindale-DisplayCondensedExtraLight-Testing.woff') format('woff');
+    src: local('Roslindale Display Condensed Extra Light'), url('Roslindale-DisplayCondensedExtraLight.woff') format('woff');
     }
     
 
@@ -76,7 +76,7 @@
     font-family: 'Roslindale Display Extra Light';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Extra Light'), url('Roslindale-DisplayExtraLight-Testing.woff') format('woff');
+    src: local('Roslindale Display Extra Light'), url('Roslindale-DisplayExtraLight.woff') format('woff');
     }
     
 
@@ -84,7 +84,7 @@
     font-family: 'Roslindale Display Narrow Extra Light';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Narrow Extra Light'), url('Roslindale-DisplayNarrowExtraLight-Testing.woff') format('woff');
+    src: local('Roslindale Display Narrow Extra Light'), url('Roslindale-DisplayNarrowExtraLight.woff') format('woff');
     }
     
 
@@ -92,7 +92,7 @@
     font-family: 'Roslindale Display Condensed Extra Light Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Condensed Extra Light Italic'), url('Roslindale-DisplayCondensedExtraLightItalic-Testing.woff') format('woff');
+    src: local('Roslindale Display Condensed Extra Light Italic'), url('Roslindale-DisplayCondensedExtraLightItalic.woff') format('woff');
     }
     
 
@@ -100,7 +100,7 @@
     font-family: 'Roslindale Display Condensed Light';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Condensed Light'), url('Roslindale-DisplayCondensedLight-Testing.woff') format('woff');
+    src: local('Roslindale Display Condensed Light'), url('Roslindale-DisplayCondensedLight.woff') format('woff');
     }
     
 
@@ -108,7 +108,7 @@
     font-family: 'Roslindale Display Condensed Light Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Condensed Light Italic'), url('Roslindale-DisplayCondensedLightItalic-Testing.woff') format('woff');
+    src: local('Roslindale Display Condensed Light Italic'), url('Roslindale-DisplayCondensedLightItalic.woff') format('woff');
     }
     
 
@@ -116,7 +116,7 @@
     font-family: 'Roslindale Display Light';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Light'), url('Roslindale-DisplayLight-Testing.woff') format('woff');
+    src: local('Roslindale Display Light'), url('Roslindale-DisplayLight.woff') format('woff');
     }
     
 
@@ -124,7 +124,7 @@
     font-family: 'Roslindale Display Narrow Light';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Narrow Light'), url('Roslindale-DisplayNarrowLight-Testing.woff') format('woff');
+    src: local('Roslindale Display Narrow Light'), url('Roslindale-DisplayNarrowLight.woff') format('woff');
     }
     
 
@@ -132,7 +132,7 @@
     font-family: 'Roslindale Deck Narrow Medium';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Deck Narrow Medium'), url('Roslindale-DeckNarrowMedium-Testing.woff') format('woff');
+    src: local('Roslindale Deck Narrow Medium'), url('Roslindale-DeckNarrowMedium.woff') format('woff');
     }
     
 
@@ -140,7 +140,7 @@
     font-family: 'Roslindale Deck Narrow Medium Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Deck Narrow Medium Italic'), url('Roslindale-DeckNarrowMediumItalic-Testing.woff') format('woff');
+    src: local('Roslindale Deck Narrow Medium Italic'), url('Roslindale-DeckNarrowMediumItalic.woff') format('woff');
     }
     
 
@@ -148,7 +148,7 @@
     font-family: 'Roslindale Display Condensed Medium';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Condensed Medium'), url('Roslindale-DisplayCondensedMedium-Testing.woff') format('woff');
+    src: local('Roslindale Display Condensed Medium'), url('Roslindale-DisplayCondensedMedium.woff') format('woff');
     }
     
 
@@ -156,7 +156,7 @@
     font-family: 'Roslindale Display Condensed Medium Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Condensed Medium Italic'), url('Roslindale-DisplayCondensedMediumItalic-Testing.woff') format('woff');
+    src: local('Roslindale Display Condensed Medium Italic'), url('Roslindale-DisplayCondensedMediumItalic.woff') format('woff');
     }
     
 
@@ -164,7 +164,7 @@
     font-family: 'Roslindale Display Medium';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Medium'), url('Roslindale-DisplayMedium-Testing.woff') format('woff');
+    src: local('Roslindale Display Medium'), url('Roslindale-DisplayMedium.woff') format('woff');
     }
     
 
@@ -172,7 +172,7 @@
     font-family: 'Roslindale Display Narrow Medium';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Narrow Medium'), url('Roslindale-DisplayNarrowMedium-Testing.woff') format('woff');
+    src: local('Roslindale Display Narrow Medium'), url('Roslindale-DisplayNarrowMedium.woff') format('woff');
     }
     
 
@@ -180,7 +180,7 @@
     font-family: 'Roslindale Text Medium';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Text Medium'), url('Roslindale-TextMedium-Testing.woff') format('woff');
+    src: local('Roslindale Text Medium'), url('Roslindale-TextMedium.woff') format('woff');
     }
     
 
@@ -188,7 +188,7 @@
     font-family: 'Roslindale Text Medium Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Text Medium Italic'), url('Roslindale-TextMediumItalic-Testing.woff') format('woff');
+    src: local('Roslindale Text Medium Italic'), url('Roslindale-TextMediumItalic.woff') format('woff');
     }
     
 
@@ -196,7 +196,7 @@
     font-family: 'Roslindale Deck Narrow Semi Bold';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Deck Narrow Semi Bold'), url('Roslindale-DeckNarrowSemiBold-Testing.woff') format('woff');
+    src: local('Roslindale Deck Narrow Semi Bold'), url('Roslindale-DeckNarrowSemiBold.woff') format('woff');
     }
     
 
@@ -204,7 +204,7 @@
     font-family: 'Roslindale Deck Narrow Semi Bold Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Deck Narrow Semi Bold Italic'), url('Roslindale-DeckNarrowSemiBoldItalic-Testing.woff') format('woff');
+    src: local('Roslindale Deck Narrow Semi Bold Italic'), url('Roslindale-DeckNarrowSemiBoldItalic.woff') format('woff');
     }
     
 
@@ -212,7 +212,7 @@
     font-family: 'Roslindale Display Condensed Semi Bold';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Condensed Semi Bold'), url('Roslindale-DisplayCondensedSemiBold-Testing.woff') format('woff');
+    src: local('Roslindale Display Condensed Semi Bold'), url('Roslindale-DisplayCondensedSemiBold.woff') format('woff');
     }
     
 
@@ -220,7 +220,7 @@
     font-family: 'Roslindale Display Condensed Semi Bold Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Condensed Semi Bold Italic'), url('Roslindale-DisplayCondensedSemiBoldItalic-Testing.woff') format('woff');
+    src: local('Roslindale Display Condensed Semi Bold Italic'), url('Roslindale-DisplayCondensedSemiBoldItalic.woff') format('woff');
     }
     
 
@@ -228,7 +228,7 @@
     font-family: 'Roslindale Display Narrow Semi Bold';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Narrow Semi Bold'), url('Roslindale-DisplayNarrowSemiBold-Testing.woff') format('woff');
+    src: local('Roslindale Display Narrow Semi Bold'), url('Roslindale-DisplayNarrowSemiBold.woff') format('woff');
     }
     
 
@@ -236,7 +236,7 @@
     font-family: 'Roslindale Display Semi Bold';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Semi Bold'), url('Roslindale-DisplaySemiBold-Testing.woff') format('woff');
+    src: local('Roslindale Display Semi Bold'), url('Roslindale-DisplaySemiBold.woff') format('woff');
     }
     
 
@@ -244,7 +244,7 @@
     font-family: 'Roslindale Text Semi Bold';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Text Semi Bold'), url('Roslindale-TextSemiBold-Testing.woff') format('woff');
+    src: local('Roslindale Text Semi Bold'), url('Roslindale-TextSemiBold.woff') format('woff');
     }
     
 
@@ -252,7 +252,7 @@
     font-family: 'Roslindale Text Semi Bold Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Text Semi Bold Italic'), url('Roslindale-TextSemiBoldItalic-Testing.woff') format('woff');
+    src: local('Roslindale Text Semi Bold Italic'), url('Roslindale-TextSemiBoldItalic.woff') format('woff');
     }
     
 
@@ -260,7 +260,7 @@
     font-family: 'Roslindale Deck Narrow Bold';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Deck Narrow Bold'), url('Roslindale-DeckNarrowBold-Testing.woff') format('woff');
+    src: local('Roslindale Deck Narrow Bold'), url('Roslindale-DeckNarrowBold.woff') format('woff');
     }
     
 
@@ -268,7 +268,7 @@
     font-family: 'Roslindale Deck Narrow Bold Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Deck Narrow Bold Italic'), url('Roslindale-DeckNarrowBoldItalic-Testing.woff') format('woff');
+    src: local('Roslindale Deck Narrow Bold Italic'), url('Roslindale-DeckNarrowBoldItalic.woff') format('woff');
     }
     
 
@@ -276,7 +276,7 @@
     font-family: 'Roslindale Display Bold';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Bold'), url('Roslindale-DisplayBold-Testing.woff') format('woff');
+    src: local('Roslindale Display Bold'), url('Roslindale-DisplayBold.woff') format('woff');
     }
     
 
@@ -284,7 +284,7 @@
     font-family: 'Roslindale Display Condensed Bold';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Condensed Bold'), url('Roslindale-DisplayCondensedBold-Testing.woff') format('woff');
+    src: local('Roslindale Display Condensed Bold'), url('Roslindale-DisplayCondensedBold.woff') format('woff');
     }
     
 
@@ -292,7 +292,7 @@
     font-family: 'Roslindale Display Narrow Bold';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Narrow Bold'), url('Roslindale-DisplayNarrowBold-Testing.woff') format('woff');
+    src: local('Roslindale Display Narrow Bold'), url('Roslindale-DisplayNarrowBold.woff') format('woff');
     }
     
 
@@ -300,7 +300,7 @@
     font-family: 'Roslindale Text Bold';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Text Bold'), url('Roslindale-TextBold-Testing.woff') format('woff');
+    src: local('Roslindale Text Bold'), url('Roslindale-TextBold.woff') format('woff');
     }
     
 
@@ -308,7 +308,7 @@
     font-family: 'Roslindale Display Condensed Bold Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Condensed Bold Italic'), url('Roslindale-DisplayCondensedBoldItalic-Testing.woff') format('woff');
+    src: local('Roslindale Display Condensed Bold Italic'), url('Roslindale-DisplayCondensedBoldItalic.woff') format('woff');
     }
     
 
@@ -316,7 +316,7 @@
     font-family: 'Roslindale Text Bold Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Text Bold Italic'), url('Roslindale-TextBoldItalic-Testing.woff') format('woff');
+    src: local('Roslindale Text Bold Italic'), url('Roslindale-TextBoldItalic.woff') format('woff');
     }
     
 
@@ -324,7 +324,7 @@
     font-family: 'Roslindale Display Black';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Black'), url('Roslindale-DisplayBlack-Testing.woff') format('woff');
+    src: local('Roslindale Display Black'), url('Roslindale-DisplayBlack.woff') format('woff');
     }
     
 
@@ -332,7 +332,7 @@
     font-family: 'Roslindale Display Condensed Black';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Condensed Black'), url('Roslindale-DisplayCondensedBlack-Testing.woff') format('woff');
+    src: local('Roslindale Display Condensed Black'), url('Roslindale-DisplayCondensedBlack.woff') format('woff');
     }
     
 
@@ -340,7 +340,7 @@
     font-family: 'Roslindale Display Narrow Black';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Narrow Black'), url('Roslindale-DisplayNarrowBlack-Testing.woff') format('woff');
+    src: local('Roslindale Display Narrow Black'), url('Roslindale-DisplayNarrowBlack.woff') format('woff');
     }
     
 
@@ -348,7 +348,7 @@
     font-family: 'Roslindale Display Condensed Ultra';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Condensed Ultra'), url('Roslindale-DisplayCondensedUltra-Testing.woff') format('woff');
+    src: local('Roslindale Display Condensed Ultra'), url('Roslindale-DisplayCondensedUltra.woff') format('woff');
     }
     
 
@@ -356,7 +356,7 @@
     font-family: 'Roslindale Display Narrow Ultra';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Narrow Ultra'), url('Roslindale-DisplayNarrowUltra-Testing.woff') format('woff');
+    src: local('Roslindale Display Narrow Ultra'), url('Roslindale-DisplayNarrowUltra.woff') format('woff');
     }
     
 
@@ -364,7 +364,7 @@
     font-family: 'Roslindale Display Ultra';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Display Ultra'), url('Roslindale-DisplayUltra-Testing.woff') format('woff');
+    src: local('Roslindale Display Ultra'), url('Roslindale-DisplayUltra.woff') format('woff');
     }
     
 
@@ -372,7 +372,7 @@
     font-family: 'Roslindale Variable Display Regular';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Variable Display Regular'), url('RoslindaleVariable-VF[Display]-Testing.woff') format('woff');
+    src: local('Roslindale Variable Display Regular'), url('RoslindaleVariable-VF[Display].woff') format('woff');
     }
     
 
@@ -380,5 +380,5 @@
     font-family: 'Roslindale Variable Display Condensed Bold';
     font-style: normal;
     font-weight: normal;
-    src: local('Roslindale Variable Display Condensed Bold'), url('RoslindaleVariable-VF-Testing.woff') format('woff');
+    src: local('Roslindale Variable Display Condensed Bold'), url('RoslindaleVariable-VF.woff') format('woff');
     }

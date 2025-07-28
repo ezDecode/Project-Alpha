@@ -2,7 +2,7 @@ const NextSection = () => {
   return (
     <div 
       id="about" 
-      className="h-screen w-screen bg-white flex items-center justify-center text-black font-['OverusedGrotesk']"
+      className="h-screen w-screen bg-white flex items-center justify-center text-black font-overused"
     >
       <div className="text-center p-8">
         <h2 className="text-5xl md:text-6xl font-bold mb-6">About Me</h2>
