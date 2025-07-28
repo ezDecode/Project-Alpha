@@ -12,24 +12,22 @@ const LayerAnimate: React.FC<LayerAnimateProps> = ({
   children,
   panelSelector = '.panel',
 }) => {
-  const mainRef = useRef<HTMLDivElement>(null);
+  const main = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
       const panels: HTMLElement[] = gsap.utils.toArray(
         panelSelector,
-        mainRef.current!
+        main.current!
       );
-      
-      panels.forEach((panel, i) => {
-        // Try to find a horizontal track within the current panel
-        const track: HTMLElement | null = panel.querySelector('.horizontal-track');
+      if (panels.length === 0) return;
 
-        // --- If it's a HORIZONTAL scroll panel ---
+      // FIX: Removed the unused 'i' variable from the forEach loop.
+      panels.forEach((panel) => {
+        const track: HTMLElement | null = panel.querySelector('.horizontal-track');
+        
         if (track) {
           const scrollAmount = track.scrollWidth - window.innerWidth;
-          
-          // Animate the track moving left
           const horizontalTween = gsap.to(track, {
             x: `-${scrollAmount}px`,
             ease: 'none',
@@ -38,33 +36,28 @@ const LayerAnimate: React.FC<LayerAnimateProps> = ({
           ScrollTrigger.create({
             trigger: panel,
             start: 'top top',
-            end: `+=${scrollAmount}`, // Pin for the exact duration of the horizontal scroll
+            end: `+=${scrollAmount}`,
             pin: true,
             scrub: 1,
             animation: horizontalTween,
-            invalidateOnRefresh: true, // Recalculate on resize
+            pinSpacing: true,
+            invalidateOnRefresh: true,
           });
-
-        // --- If it's a STANDARD snapping panel ---
         } else {
           ScrollTrigger.create({
             trigger: panel,
             start: 'top top',
             pin: true,
-            pinSpacing: false, // Prevents space from being added after pin
-            snap: {
-              snapTo: 1, // Snap to the end
-              duration: 0.5,
-              ease: 'power2.inOut',
-            },
+            pinSpacing: false,
+            end: '+=100%',
           });
         }
       });
     },
-    { scope: mainRef }
+    { scope: main }
   );
 
-  return <main ref={mainRef}>{children}</main>;
+  return <main ref={main}>{children}</main>;
 };
 
 export default LayerAnimate;

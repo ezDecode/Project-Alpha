@@ -7,9 +7,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'overused': ['OverusedGrotesk', 'sans-serif'],
-        'roslindale': ['Roslindale', 'serif'],
-        'roslindale-text': ['RoslindaleText', 'serif'],
+        'overused': ['OverusedGrotesk', 'system-ui', 'sans-serif'],
+        'roslindale': ['Roslindale', 'Georgia', 'Times New Roman', 'serif'],
+        'roslindale-text': ['RoslindaleText', 'Georgia', 'Times New Roman', 'serif'],
       },
     },
   },

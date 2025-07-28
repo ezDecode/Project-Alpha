@@ -1,8 +1,5 @@
 @import "tailwindcss";
 
-/* Import Roslindale fonts */
-@import url('/fonts/Roslindale/style.css');
-
 /* Global Reset for Full Viewport */
 * {
   box-sizing: border-box;
@@ -79,12 +76,13 @@ html {
   font-style: normal;
 }
 
-/* Roslindale Font Family - Key Variants */
+/* Roslindale Font Family - Using Display variants */
 @font-face {
   font-family: 'Roslindale';
   src: url('/fonts/Roslindale/Roslindale-DisplayRegular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -92,6 +90,7 @@ html {
   src: url('/fonts/Roslindale/Roslindale-DisplayMedium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -99,6 +98,7 @@ html {
   src: url('/fonts/Roslindale/Roslindale-DisplaySemiBold.woff') format('woff');
   font-weight: 600;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -106,6 +106,7 @@ html {
   src: url('/fonts/Roslindale/Roslindale-DisplayBold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -113,6 +114,7 @@ html {
   src: url('/fonts/Roslindale/Roslindale-DisplayBlack.woff') format('woff');
   font-weight: 900;
   font-style: normal;
+  font-display: swap;
 }
 
 /* Roslindale Text variants for body text */
@@ -164,4 +166,34 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+/* Ensure Roslindale font is applied properly */
+.font-roslindale {
+  font-family: 'Roslindale', Georgia, 'Times New Roman', serif !important;
+}
+
+.font-roslindale h2 {
+  font-family: 'Roslindale', Georgia, 'Times New Roman', serif !important;
+}
+
+/* Specific targeting for AboutSection */
+#about h2,
+#about .font-medium {
+  font-family: 'Roslindale', Georgia, 'Times New Roman', serif !important;
+}
+
+/* Debug utility to check if font is loading */
+.debug-font {
+  position: relative;
+}
+
+.debug-font::before {
+  content: 'Font: ' attr(data-font);
+  position: absolute;
+  top: -20px;
+  left: 0;
+  font-size: 12px;
+  color: #00ff00;
+  z-index: 1000;
 }
