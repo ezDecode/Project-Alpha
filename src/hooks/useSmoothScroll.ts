@@ -26,7 +26,7 @@ export const useSmoothScroll = () => {
     lenisRef.current = lenis
 
     // Optimized ScrollTrigger integration
-    lenis.on('scroll', (e) => {
+    lenis.on('scroll', () => {
       ScrollTrigger.update()
     })
 
