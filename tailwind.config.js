@@ -7,9 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'overused': ['OverusedGrotesk', 'system-ui', 'sans-serif'],
-        'roslindale': ['Roslindale', 'Georgia', 'Times New Roman', 'serif'],
-        'roslindale-text': ['RoslindaleText', 'Georgia', 'Times New Roman', 'serif'],
+        'dmsans': ['DMSans', 'system-ui', 'sans-serif'],
+        'instrument': ['InstrumentSerif', 'Georgia', 'Times New Roman', 'serif'],
       },
     },
   },

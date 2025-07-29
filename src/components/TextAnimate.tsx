@@ -73,7 +73,6 @@ const TextAnimate: React.FC<TextAnimateProps> = ({
     )
   }
 
-  // For word-by-word animation (can be extended later)
   if (by === 'word') {
     const words = children.split(' ')
     return (
@@ -110,7 +109,6 @@ const TextAnimate: React.FC<TextAnimateProps> = ({
     )
   }
 
-  // Default to text animation
   return (
     <motion.p
       className={className}

@@ -5,7 +5,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
-import WorkSection from './components/WorkSection';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -72,7 +71,6 @@ const App: React.FC = () => {
     <main ref={mainRef}>
       <HeroSection />
       <AboutSection />
-      <WorkSection />
     </main>
   );
 };

@@ -9,10 +9,9 @@ export const useSmoothScroll = () => {
   const lenisRef = useRef<Lenis | null>(null)
 
   useEffect(() => {
-    // Initialize Lenis with optimized settings for GSAP
     const lenis = new Lenis({
       duration: 1.0,
-      easing: (t) => 1 - Math.pow(1 - t, 3), // Smoother easing for scroll animations
+      easing: (t) => 1 - Math.pow(1 - t, 3),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
@@ -25,22 +24,18 @@ export const useSmoothScroll = () => {
 
     lenisRef.current = lenis
 
-    // Optimized ScrollTrigger integration
     lenis.on('scroll', () => {
       ScrollTrigger.update()
     })
 
-    // High-performance RAF integration
     const raf = (time: number) => {
       lenis.raf(time)
       requestAnimationFrame(raf)
     }
     requestAnimationFrame(raf)
 
-    // Configure GSAP for smooth animations
     gsap.ticker.lagSmoothing(0)
 
-    // Add scroll behavior to navigation links
     const handleNavClick = (e: Event) => {
       const target = e.target as HTMLElement
       const href = target.getAttribute('data-scroll-to')
@@ -54,7 +49,6 @@ export const useSmoothScroll = () => {
       }
     }
 
-    // Add event listeners
     document.addEventListener('click', handleNavClick)
 
     return () => {

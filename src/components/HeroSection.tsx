@@ -1,16 +1,26 @@
-import React, { useRef, useEffect } from 'react'
-import Navbar from './Navbar'
-import TextAnimate from './TextAnimate'
+import React, { useRef, useEffect } from 'react';
+import Navbar from './Navbar';
+import TextAnimate from './TextAnimate';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 const HeroSection: React.FC = () => {
-  const videoRef = useRef<HTMLVideoElement>(null)
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const targetRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ['start start', 'end start'],
+  });
+  
+  const opacity = useTransform(scrollYProgress, [0.5, 1], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0.5, 1], [1, 0.9]);
 
   useEffect(() => {
-    if (videoRef.current) videoRef.current.playbackRate = 1.4
-  }, [])
+    if (videoRef.current) videoRef.current.playbackRate = 1.4;
+  }, []);
 
   return (
-    <div id="home" className="panel relative h-screen w-screen overflow-hidden">
+    <div ref={targetRef} id="home" className="panel relative h-screen w-screen overflow-hidden bg-black">
       <Navbar />
       <video
         ref={videoRef}
@@ -22,7 +32,7 @@ const HeroSection: React.FC = () => {
       >
         <source src="/assets/Raycast.webm" type="video/webm" />
       </video>
-      <div className="flex items-center justify-center h-full w-full relative z-10">
+      <motion.div style={{ opacity, scale }} className="flex items-center justify-center h-full w-full relative z-10">
         <div className="text-center">
           <div className="flex items-center justify-center mb-6">
             <img
@@ -51,9 +61,9 @@ const HeroSection: React.FC = () => {
             </TextAnimate>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
-  )
-}
+  );
+};
 
-export default HeroSection
+export default HeroSection;
