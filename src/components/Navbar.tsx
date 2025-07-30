@@ -3,7 +3,7 @@ import React from 'react'
 const Navbar: React.FC = () => {
   return (
     <div
-      className="fixed top-0 left-1/2 transform -translate-x-1/2 w-4/5 px-4 sm:px-6 pt-8 sm:pt-10 md:pt-12"
+      className="fixed top-0 left-1/2 transform -translate-x-1/2 w-4/5 px-4 sm:px-6 pt-5 sm:pt-6 md:pt-8"
       style={{ zIndex: 50 }}
     >
       <nav className="flex justify-between items-center text-base sm:text-lg font-polysans font-normal tracking-wide py-4 px-2 sm:px-4 text-white">
@@ -11,7 +11,7 @@ const Navbar: React.FC = () => {
           className="hover:opacity-70 transition-opacity cursor-pointer py-2 px-1"
           data-scroll-to="#home"
         >
-          SKYHERE
+          &#169; Code By Sky
         </span>
         <div className="flex gap-3 sm:gap-3 md:gap-4 lg:gap-5">
           <span 
