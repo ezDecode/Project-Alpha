@@ -1,6 +1,3 @@
-/* This file should ONLY contain the @font-face rules. */
-
-/* PolySans Font Family */
 @font-face {
   font-family: 'PolySans';
   src: url('/fonts/PolySans/PolySans%20Neutral.ttf') format('truetype');
