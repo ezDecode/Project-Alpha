@@ -124,4 +124,4 @@ const TextAnimate: React.FC<TextAnimateProps> = ({
   )
 }
 
-export default TextAnimate 
+export default TextAnimate

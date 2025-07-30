@@ -32,34 +32,36 @@ const HeroSection: React.FC = () => {
       >
         <source src="/assets/Raycast.webm" type="video/webm" />
       </video>
+      
+      {/* Gradient overlay for seamless transition */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black z-5"></div>
+      
       <motion.div style={{ opacity, scale }} className="flex items-center justify-center h-full w-full relative z-10">
-        <div className="text-center">
-          <div className="flex items-center justify-center mb-6">
+        <div className="text-center w-[80vw] mx-auto">
+          <div className="flex items-center justify-center mb-6 w-full">
             <img
               src="/assets/HeaderText.svg"
               alt="Creative Sky"
-              className="max-w-none object-contain"
-              style={{ width: '112%' }}
+              className="max-w-full object-contain mx-auto"
+              style={{ width: '101%', maxWidth: '100%' }}
             />
           </div>
-          <div style={{ width: '80vw', margin: '0 auto' }}>
-            <TextAnimate
-              by="word"
-              delay={0.5}
-              duration={0.6}
-              className="text-center"
-              style={{
-                fontSize: '2.43rem',
-                fontWeight: 500,
-                color: 'white',
-                lineHeight: '1.4',
-              }}
-            >
-              The experience you'll never forget — designed by a self-taught
-              student who breaks the rules, blends logic with creativity, and
-              turns pixels into unforgettable digital stories.
-            </TextAnimate>
-          </div>
+          <TextAnimate
+            by="word"
+            delay={0.5}
+            duration={0.6}
+            className="text-center font-editorial"
+            style={{
+              fontSize: '1.9rem',
+              fontWeight: 400,
+              color: 'white',
+              lineHeight: '1.4',
+            }}
+          >
+            The experience you'll never forget — designed by a self-taught
+            student who breaks the rules, blends logic with creativity, and
+            turns pixels into unforgettable digital stories.
+          </TextAnimate>
         </div>
       </motion.div>
     </div>

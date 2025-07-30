@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import defaultTheme from 'tailwindcss/defaultTheme';
+
 export default {
   content: [
     "./index.html",
@@ -6,9 +8,10 @@ export default {
   ],
   theme: {
     extend: {
+      // Correctly configure font families for Tailwind to use
       fontFamily: {
-        'dmsans': ['DMSans', 'system-ui', 'sans-serif'],
-        'instrument': ['InstrumentSerif', 'Georgia', 'Times New Roman', 'serif'],
+        'polysans': ['PolySans', ...defaultTheme.fontFamily.sans],
+        'editorial': ['PP Editorial New', ...defaultTheme.fontFamily.serif],
       },
     },
   },
