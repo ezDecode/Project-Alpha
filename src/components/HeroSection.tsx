@@ -50,7 +50,7 @@ const HeroSection: React.FC = () => {
             by="word"
             delay={0.5}
             duration={0.6}
-            className="text-center font-editorial"
+            className="text-center font-polysans"
             style={{
               fontSize: '2.25rem',
               fontWeight: 400,

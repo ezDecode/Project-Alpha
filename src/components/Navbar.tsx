@@ -6,7 +6,7 @@ const Navbar: React.FC = () => {
       className="fixed top-0 left-1/2 transform -translate-x-1/2 w-4/5 px-4 sm:px-6 pt-5 sm:pt-6 md:pt-8"
       style={{ zIndex: 50 }}
     >
-      <nav className="flex justify-between items-center text-base sm:text-lg font-polysans font-normal tracking-wide py-4 px-2 sm:px-4 text-white">
+      <nav className="flex justify-between items-center text-base sm:text-lg font-polysans font-normal py-4 px-2 sm:px-4 text-white">
         <span 
           className="hover:opacity-70 transition-opacity cursor-pointer py-2 px-1"
           data-scroll-to="#home"
@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
           </span>
           <span 
             className="hover:opacity-70 transition-opacity cursor-pointer py-2 px-3 sm:px-4"
-            onClick={() => window.location.href = 'mailto:contact@skyhere.dev'}
+            onClick={() => window.location.href = 'mailto:ezdecode@gmail.com'}
           >
             EMAIL ME
           </span>
