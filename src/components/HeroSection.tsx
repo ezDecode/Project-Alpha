@@ -37,7 +37,7 @@ const HeroSection: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black z-5"></div>
       
       <motion.div style={{ opacity, scale }} className="flex items-center justify-center h-full w-full relative z-10">
-        <div className="text-center w-[80vw] mx-auto">
+        <div className="text-center w-[80vw] mx-auto relative">
           <div className="flex items-center justify-center mb-6 w-full">
             <img
               src="/assets/HeaderText.svg"
@@ -52,7 +52,7 @@ const HeroSection: React.FC = () => {
             duration={0.6}
             className="text-center font-editorial"
             style={{
-              fontSize: '1.9rem',
+              fontSize: '2.25rem',
               fontWeight: 400,
               color: 'white',
               lineHeight: '1.4',
