@@ -43,10 +43,8 @@ const FooterSection: React.FC = () => {
   );
 
   return (
-    <footer ref={containerRef} className="relative h-[100vh] bg-[#141414]">
+    <footer ref={containerRef} className="relative h-[150vh] bg-[#141414]">
       <div className="sticky top-0 h-screen text-white relative">
-
-        {/* --- SVG element has been removed --- */}
 
         {/* Vertically and horizontally centered content */}
         <div className="w-full h-full flex items-center justify-center">
@@ -58,8 +56,24 @@ const FooterSection: React.FC = () => {
               className="text-[10vw] md:text-[8vw] font-medium leading-none"
               style={{ fontFamily: "'PP Editorial New', serif", fontWeight: 300 }}
             >
-              <span className="block">Let's Work</span>
-              <span className="block italic">Together</span>
+              <div className="flex justify-end items-center gap-x-4 md:gap-x-6">
+                <span>Let's</span>
+                <motion.div
+                    className="w-[14.5vw] h-[9.5vw] max-w-[200px] max-h-[135px] bg-neutral-800 rounded-full inline-flex overflow-hidden align-middle -translate-y-1" // <-- FIX: Increased size by ~20%
+                    whileHover={{ scale: 1.15, rotate: -10 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 10 }}
+                >
+                    <img
+                        src="/assets/HeaderImageBW.png" 
+                        alt="decorative image"
+                        className="w-full h-full object-cover"
+                    />
+                </motion.div>
+                <span>Work</span>
+              </div>
+              <div className="mt-1">
+                <span className="block italic">Together</span>
+              </div>
             </h2>
             <div className="mt-12 flex justify-end gap-8 md:gap-12">
               <SocialLink href="https://github.com">GitHub</SocialLink>
@@ -72,12 +86,12 @@ const FooterSection: React.FC = () => {
         {/* Absolutely positioned bottom navigation bar */}
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80vw] flex justify-between items-center text-sm md:text-base text-neutral-400 font-light border-t border-neutral-700 py-6">
           <div className='flex gap-4'>
-            <span>© 2025 Akash Choudhury All Rights Reserved</span>
-            <span>Needs A lot of caffeine</span>
+            <span>© 2024 Akash Choudhury</span>
+            <span>All Rights Reserved</span>
           </div>
           <MagneticButton
              onClick={() => window.location.href = 'mailto:ezdecode@gmail.com'}
-             className="bg-black-600 border-2 text-white px-8 py-4 rounded-full"
+             className="bg-indigo-600 text-white px-8 py-4 rounded-full"
           >
              Get in Touch
           </MagneticButton>
