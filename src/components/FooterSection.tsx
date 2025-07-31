@@ -59,7 +59,7 @@ const FooterSection: React.FC = () => {
               <div className="flex justify-end items-center gap-x-4 md:gap-x-6">
                 <span>Let's</span>
                 <motion.div
-                    className="w-[14.5vw] h-[9.5vw] max-w-[200px] max-h-[135px] bg-neutral-800 rounded-full inline-flex overflow-hidden align-middle -translate-y-1" // <-- FIX: Increased size by ~20%
+                    className="w-[14.5vw] h-[9.5vw] max-w-[200px] max-h-[135px] bg-neutral-800 rounded-xl inline-flex overflow-hidden align-middle -translate-y-1" // <-- FIX: Increased size by ~20%
                     whileHover={{ scale: 1.15, rotate: -10 }}
                     transition={{ type: "spring", stiffness: 300, damping: 10 }}
                 >
@@ -91,7 +91,7 @@ const FooterSection: React.FC = () => {
           </div>
           <MagneticButton
              onClick={() => window.location.href = 'mailto:ezdecode@gmail.com'}
-             className="bg-indigo-600 text-white px-8 py-4 rounded-full"
+             className="bg-black-600 border-2 text-white px-8 py-4 rounded-full"
           >
              Get in Touch
           </MagneticButton>
