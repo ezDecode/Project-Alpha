@@ -7,6 +7,8 @@ import { AnimatePresence } from 'framer-motion';
 import Preloader from './components/Preloader';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
+import ProjectSection from './components/ProjectSection';
+import FooterSection from './components/FooterSection';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -97,7 +99,9 @@ const App: React.FC = () => {
       <HeroSection startAnimation={animationReady} />
       <div className="w-full h-0 bg-black"></div>
       <AboutSection />
-    </main>
+      <ProjectSection />
+      <FooterSection />    
+      </main>
   );
 };
 

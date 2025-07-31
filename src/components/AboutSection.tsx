@@ -42,8 +42,6 @@ const AboutSection: React.FC = () => {
   const containerRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    // Animation starts when the top of the section meets the bottom of the viewport
-    // and ends when the top of the section meets the top of the viewport.
     offset: ['start end', 'end start']
   });
 
@@ -59,16 +57,9 @@ const AboutSection: React.FC = () => {
   }, []);
 
   // --- START: SVG CURVE ANIMATION LOGIC ---
-
-  // initialPath: A flat line at the bottom of the viewport.
   const initialPath = `M0 ${dimension.height} L${dimension.width} ${dimension.height} L${dimension.width} ${dimension.height} L0 ${dimension.height} Z`;
-  
-  // targetPath: A curve that starts at the top-left, dips down, and ends at the top-right.
   const targetPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${dimension.height} L0 ${dimension.height} Q${dimension.width/2} ${dimension.height - 150} 0 0 Z`;
-
-  // Interpolate between the two paths based on scroll progress.
   const path = useTransform(scrollYProgress, [0, 1], [initialPath, targetPath]);
-  
   // --- END: SVG CURVE ANIMATION LOGIC ---
 
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -107,7 +98,11 @@ const AboutSection: React.FC = () => {
     <section ref={containerRef} id="about" className="relative bg-transparent pt-32 pb-40 md:pb-48">
       {/* The content is wrapped in a container with a relative position and high z-index */}
       <div className="relative z-10 w-[60vw] mx-auto flex flex-col items-center justify-center gap-12 md:gap-16">
-        <h2 ref={headingRef} className="relative w-full text-white text-5xl md:text-7xl lg:text-8xl font-editorial font-light leading-tight text-center flex flex-wrap justify-center items-center gap-x-3 gap-y-1.5" style={{fontFamily: "'PP Editorial New', serif", fontWeight: 300, lineHeight: '1.2'}}>
+        <h2 
+          ref={headingRef} 
+          className="relative w-full text-white text-5xl md:text-7xl lg:text-8xl font-editorial font-light leading-tight text-center flex flex-wrap justify-center items-center gap-x-3 gap-y-1.5 mt-[20%]" // <-- Added margin-top here
+          style={{fontFamily: "'PP Editorial New', serif", fontWeight: 300, lineHeight: '1.2'}}
+        >
           {headingElements.map((element, index) => {
             const start = index / headingElements.length;
             const end = start + 1 / headingElements.length;
@@ -121,10 +116,10 @@ const AboutSection: React.FC = () => {
 
         <motion.div ref={ctaRef} style={{ opacity: buttonOpacity, y: buttonY }} className="relative">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <MagneticButton className="w-full sm:w-auto px-10 py-4 border border-neutral-600 rounded-full text-white text-base md:text-lg font-polysans font-medium">
+            <MagneticButton className="w-full sm:w-auto px-10 py-4 border-2 border-white-400 rounded-full text-white text-base md:text-lg font-polysans font-medium">
               Explore My Work
             </MagneticButton>
-            <MagneticButton className="w-full sm:w-auto px-10 py-4 border border-neutral-600 rounded-full text-white text-base md:text-lg font-polysans font-medium">
+            <MagneticButton className="w-full sm:w-auto px-10 py-4 border-2 border-white-400 rounded-full text-white text-base md:text-lg font-polysans font-medium">
               View Resume
             </MagneticButton>
           </div>

@@ -119,7 +119,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ startAnimation }) => {
                 {index === imageInsertionIndex && (
                   <>
                     <motion.div
-                      className="relative lg:-translate-y-3 md:-translate-y-3 -translate-y-2 w-24 h-20 md:w-32 md:h-28 lg:w-48 lg:h-32 bg-neutral-800 rounded-2xl inline-flex overflow-hidden align-middle mx-2"
+                      className="relative lg:-translate-y-3 md:-translate-y-3 -translate-y-2 w-24 h-20 md:w-32 md:h-28 lg:w-48 lg:h-32 bg-neutral-800 rounded-full inline-flex overflow-hidden align-middle mx-2" // <-- FIX: Changed to rounded-full
                       variants={childVariants}
                     >
                       <ImageTransition images={allImages} interval={1500} className="w-full h-full" />
