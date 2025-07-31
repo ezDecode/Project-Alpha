@@ -1,16 +1,18 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React from 'react';
+import { motion } from 'framer-motion';
 
 interface TextAnimateProps {
-  children: string
-  className?: string
-  delay?: number
-  duration?: number
-  animation?: 'blurInUp' | 'fadeIn'
-  by?: 'text' | 'word' | 'character'
-  startOnView?: boolean
-  once?: boolean
-  style?: React.CSSProperties
+  children: string;
+  className?: string;
+  delay?: number;
+  duration?: number;
+  animation?: 'blurInUp' | 'fadeIn';
+  by?: 'text' | 'word' | 'character';
+  startOnView?: boolean;
+  once?: boolean;
+  style?: React.CSSProperties;
+  // CORRECTED: Add startAnimation prop
+  startAnimation?: boolean; 
 }
 
 const TextAnimate: React.FC<TextAnimateProps> = ({
@@ -22,40 +24,25 @@ const TextAnimate: React.FC<TextAnimateProps> = ({
   by = 'text',
   startOnView = true,
   once = true,
-  style = {}
+  style = {},
+  // CORRECTED: Destructure the prop
+  startAnimation, 
 }) => {
   const blurInUpVariants = {
-    hidden: {
-      filter: 'blur(10px)',
-      opacity: 0,
-      y: 20
-    },
-    visible: {
-      filter: 'blur(0px)',
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration,
-        delay,
-        ease: [0.25, 0.25, 0, 1]
-      }
-    }
-  }
+    hidden: { filter: 'blur(10px)', opacity: 0, y: 20 },
+    visible: { filter: 'blur(0px)', opacity: 1, y: 0, transition: { duration, delay, ease: [0.25, 0.25, 0, 1] } }
+  };
 
   const fadeInVariants = {
-    hidden: {
-      opacity: 0
-    },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration,
-        delay
-      }
-    }
-  }
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration, delay } }
+  };
 
-  const variants = animation === 'blurInUp' ? blurInUpVariants : fadeInVariants
+  const variants = animation === 'blurInUp' ? blurInUpVariants : fadeInVariants;
+
+  // CORRECTED: Determine animation state based on startAnimation prop if provided
+  const animateState = startAnimation !== undefined ? (startAnimation ? "visible" : "hidden") : undefined;
+  const useWhileInView = animateState === undefined && startOnView;
 
   if (by === 'text') {
     return (
@@ -63,25 +50,25 @@ const TextAnimate: React.FC<TextAnimateProps> = ({
         className={className}
         style={style}
         initial="hidden"
-        animate={startOnView ? undefined : "visible"}
-        whileInView={startOnView ? "visible" : undefined}
+        animate={animateState}
+        whileInView={useWhileInView ? "visible" : undefined}
         viewport={{ once, margin: "-100px" }}
         variants={variants}
       >
         {children}
       </motion.p>
-    )
+    );
   }
 
   if (by === 'word') {
-    const words = children.split(' ')
+    const words = children.split(' ');
     return (
       <motion.p
         className={className}
         style={style}
         initial="hidden"
-        animate={startOnView ? undefined : "visible"}
-        whileInView={startOnView ? "visible" : undefined}
+        animate={animateState}
+        whileInView={useWhileInView ? "visible" : undefined}
         viewport={{ once, margin: "-100px" }}
       >
         {words.map((word, index) => (
@@ -106,22 +93,23 @@ const TextAnimate: React.FC<TextAnimateProps> = ({
           </motion.span>
         ))}
       </motion.p>
-    )
+    );
   }
 
+  // Fallback for 'character' or other types
   return (
     <motion.p
       className={className}
       style={style}
       initial="hidden"
-      animate={startOnView ? undefined : "visible"}
-      whileInView={startOnView ? "visible" : undefined}
+      animate={animateState}
+      whileInView={useWhileInView ? "visible" : undefined}
       viewport={{ once, margin: "-100px" }}
       variants={variants}
     >
       {children}
     </motion.p>
-  )
-}
+  );
+};
 
-export default TextAnimate
+export default TextAnimate;
