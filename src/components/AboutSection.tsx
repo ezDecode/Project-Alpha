@@ -115,7 +115,7 @@ const AboutSection: React.FC = () => {
           })}
         </h2>
         
-        <div className="w-[50vw]">
+        <div className="w-[60vw]">
           <ScrollRevealParagraph text="I'm a passionate full-stack developer crafting high-performance web applications with precision and creativity. I transform complex challenges into elegant digital solutions using React, Node.js, and cutting-edge modern architecture." />
         </div>
 
