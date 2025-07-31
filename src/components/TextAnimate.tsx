@@ -11,7 +11,6 @@ interface TextAnimateProps {
   startOnView?: boolean;
   once?: boolean;
   style?: React.CSSProperties;
-  // CORRECTED: Add startAnimation prop
   startAnimation?: boolean; 
 }
 
@@ -25,12 +24,13 @@ const TextAnimate: React.FC<TextAnimateProps> = ({
   startOnView = true,
   once = true,
   style = {},
-  // CORRECTED: Destructure the prop
   startAnimation, 
 }) => {
   const blurInUpVariants = {
     hidden: { filter: 'blur(10px)', opacity: 0, y: 20 },
-    visible: { filter: 'blur(0px)', opacity: 1, y: 0, transition: { duration, delay, ease: [0.25, 0.25, 0, 1] } }
+    // --- START: FIX APPLIED HERE ---
+    visible: { filter: 'blur(0px)', opacity: 1, y: 0, transition: { duration, delay, ease: [0.25, 0.25, 0, 1] as const } }
+    // --- END: FIX APPLIED HERE ---
   };
 
   const fadeInVariants = {
@@ -40,7 +40,6 @@ const TextAnimate: React.FC<TextAnimateProps> = ({
 
   const variants = animation === 'blurInUp' ? blurInUpVariants : fadeInVariants;
 
-  // CORRECTED: Determine animation state based on startAnimation prop if provided
   const animateState = startAnimation !== undefined ? (startAnimation ? "visible" : "hidden") : undefined;
   const useWhileInView = animateState === undefined && startOnView;
 
@@ -83,7 +82,9 @@ const TextAnimate: React.FC<TextAnimateProps> = ({
                 transition: {
                   duration: duration,
                   delay: delay + index * 0.1,
-                  ease: [0.25, 0.25, 0, 1]
+                  // --- START: FIX APPLIED HERE ---
+                  ease: [0.25, 0.25, 0, 1] as const
+                  // --- END: FIX APPLIED HERE ---
                 }
               }
             }}
@@ -95,8 +96,7 @@ const TextAnimate: React.FC<TextAnimateProps> = ({
       </motion.p>
     );
   }
-
-  // Fallback for 'character' or other types
+  
   return (
     <motion.p
       className={className}
