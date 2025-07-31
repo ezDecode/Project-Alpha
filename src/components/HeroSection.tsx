@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform, useSpring, motionValue } from 'framer-
 import type { Variants } from 'framer-motion';
 import { gsap } from 'gsap';
 
-import Navbar from './Navbar'; 
+import Navbar from './Navbar';
 import TextAnimate from './TextAnimate';
 import ImageTransition from './ImageTransition';
 
@@ -85,17 +85,33 @@ const HeroSection: React.FC<HeroSectionProps> = ({ startAnimation }) => {
   const containerVariants: Variants = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.02, delayChildren: 0.2 } } };
   const childVariants: Variants = { hidden: { filter: 'blur(10px)', opacity: 0, y: 20 }, visible: { filter: 'blur(0px)', opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.25, 0, 1] as const } } };
 
+  const isCharItalic = (word: string, char: string): boolean => {
+    const lowerChar = char.toLowerCase();
+    switch (word) {
+      case "Code":
+        return lowerChar === 'o';
+      case "Shadows":
+        return lowerChar === 'w';
+      case "Build":
+        return lowerChar === 'u';
+      case "Light.":
+        return lowerChar === 'g';
+      default:
+        return false;
+    }
+  };
+
   return (
     <div ref={targetRef} id="home" className="panel relative h-screen w-screen overflow-hidden" style={{ backgroundColor: '#FAF6E9' }}>
       <Navbar />
       <motion.div style={{ opacity, scale }} className="flex flex-col items-center justify-center h-full w-full relative z-10">
         <div className="text-center w-[70vw] mx-auto relative">
-          <motion.h1 ref={headingRef} className="text-black text-[3.85rem] md:text-[6rem] lg:text-[8.25rem] font-light text-center mb-12 cursor-default flex flex-wrap justify-center items-center" style={{ fontFamily: "'PP Editorial New', serif", fontWeight: 300, lineHeight: '1.2' }} variants={containerVariants} initial="hidden" animate={startAnimation ? 'visible' : 'hidden'}>
+          <motion.h1 ref={headingRef} className="text-black text-[3.85rem] md:text-[6rem] lg:text-[8.25rem] font-light text-center mb-4 mt-[12vh] cursor-default flex flex-wrap justify-center items-center" style={{ fontFamily: "'PP Editorial New', serif", fontWeight: 300, lineHeight: '1.2', letterSpacing: '-0.03em' }} variants={containerVariants} initial="hidden" animate={startAnimation ? 'visible' : 'hidden'}>
             {wordsPart1.map((word, index) => (
               <React.Fragment key={`p1-${index}`}>
                 <span className="inline-flex">
                   {word.split('').map((char, letterIndex) => (
-                    <Letter key={letterIndex} char={char} isItalic={char.toLowerCase() === 'o'} mousePos={mousePos} variants={childVariants} />
+                    <Letter key={letterIndex} char={char} isItalic={isCharItalic(word, char)} mousePos={mousePos} variants={childVariants} />
                   ))}
                 </span>
                 <span className="inline-block"> </span>
@@ -120,7 +136,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ startAnimation }) => {
               <React.Fragment key={`p2-${index}`}>
                 <span className="inline-flex">
                   {word.split('').map((char, letterIndex) => (
-                    <Letter key={letterIndex} char={char} isItalic={char.toLowerCase() === 'o'} mousePos={mousePos} variants={childVariants} />
+                    <Letter key={letterIndex} char={char} isItalic={isCharItalic(word, char)} mousePos={mousePos} variants={childVariants} />
                   ))}
                 </span>
                 {index < wordsPart2.length - 1 && <span className="inline-block"> </span>}
@@ -128,24 +144,21 @@ const HeroSection: React.FC<HeroSectionProps> = ({ startAnimation }) => {
             ))}
 
           </motion.h1>
-          <TextAnimate by="word" delay={0.8} duration={0.3} className="text-center font-polysans text-[2rem] md:text-[2.05rem]" style={{ fontWeight: 400, color: 'black', lineHeight: '1.5' }} startAnimation={startAnimation}>
+          <TextAnimate by="word" delay={0.8} duration={0.3} className="text-center font-polysans text-[2rem] md:text-[2.15rem] font-tight" style={{ fontWeight: 400, color: 'black', lineHeight: '1.5' }} startAnimation={startAnimation}>
             The experience you'll never forget — designed by a self-taught student who breaks the rules, blends logic with creativity, and turns pixels into unforgettable.
           </TextAnimate>
         </div>
       </motion.div>
       
-      {/* --- START: SVG DIVIDER FOR BLENDING --- */}
       <div className="absolute bottom-0 left-0 w-full h-[150px] z-20 pointer-events-none">
         <svg
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
           className="w-full h-full"
         >
-          {/* A path that creates a gentle curve. It's filled with black to match the next section. */}
           <path d="M0,100 C40,0 60,0 100,100 L100,101 L0,101 Z" fill="black"></path>
         </svg>
       </div>
-      {/* --- END: SVG DIVIDER FOR BLENDING --- */}
 
     </div>
   );

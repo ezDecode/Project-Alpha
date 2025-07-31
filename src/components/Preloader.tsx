@@ -65,7 +65,8 @@ const Preloader: React.FC = () => {
       variants={slideUp}
       initial="initial"
       exit="exit"
-      className="fixed inset-0 bg-white text-white z-[100] flex items-center justify-center"
+      className="fixed inset-0 text-white z-[100] flex items-center justify-center"
+      style={{ backgroundColor: '#FAF6E9' }}
     >
       {dimension.width > 0 && (
         <>
