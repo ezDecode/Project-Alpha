@@ -5,7 +5,7 @@ import type { Variants } from 'framer-motion';
 import  { motion } from 'framer-motion';
 import { opacity, slideUp } from './anim';
 
-const words = ["नमस्ते", "Hello", "Bonjour", "Ciao", "Olà", "やあ", "안녕하세요", "Hola", "Привет"];
+const words = ["नमस्ते", "Hello", "Bonjour", "Ciao", "Olà", "やあ", "Hola"];
 
 const Preloader: React.FC = () => {
   const [index, setIndex] = useState(0);
@@ -43,7 +43,7 @@ const Preloader: React.FC = () => {
       variants={slideUp}
       initial="initial"
       exit="exit"
-      className="fixed inset-0 bg-black text-white z-[100] flex items-center justify-center"
+      className="fixed inset-0 bg-white text-white z-[100] flex items-center justify-center"
     >
       {dimension.width > 0 && (
         <>
