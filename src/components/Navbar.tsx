@@ -75,8 +75,6 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
   });
 
   return (
-    // 3. ANIMATION WRAPPER
-    // This motion.div controls the sliding animation of the entire navbar
     <motion.div
       variants={{
         visible: { y: 0 },
