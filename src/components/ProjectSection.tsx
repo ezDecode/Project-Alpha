@@ -7,35 +7,32 @@ import gsap from 'gsap';
 const projects = [
     {
       title: "Excelify",
-      src: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      color: "#D1D1D1"
+      src: "/assets/ProjectImages/excelify.png",
     },
     {
       title: "Cloud Deck",
-      src: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=2940&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      color: "#E0A37E"
+      src: "/assets/ProjectImages/cloud-deck.png",
     },
     {
       title: "Code Battle",
-      src: "https://images.unsplash.com/photo-1542291026-7eec264c27ab?q=80&w=2940&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      color: "#A2A4A6"
+      src: "/assets/ProjectImages/code-battle.png",
     },
     {
-      title: "Figma Designs",
-      src: "https://images.unsplash.com/photo-1491553662414-22b9449f8443?q=80&w=2864&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      color: "#B0B0B0"
+      title: "QR Code Generator",
+      src: "/assets/ProjectImages/qr-code-generator.png",
     }
 ];
 
-// --- Modal Component (No changes needed here) ---
+// --- Modal Component (Updated with Dynamic Width) ---
 const Modal: React.FC<{
   modal: { active: boolean, index: number };
-  projects: typeof projects
+  projects: typeof projects;
 }> = ({ modal, projects }) => {
 
   const { active, index } = modal;
   const modalContainer = useRef<HTMLDivElement>(null);
 
+  // GSAP animation for smooth mouse tracking
   useEffect(() => {
     if (modalContainer.current) {
         const moveContainerX = gsap.quickTo(modalContainer.current, "left", { duration: 0.8, ease: "power3" });
@@ -52,33 +49,42 @@ const Modal: React.FC<{
     }
   }, []);
 
+  const { src, title } = projects[index];
+
   return (
-    <motion.div ref={modalContainer}
+    <motion.div
+        ref={modalContainer}
         variants={{
-            initial: { scale: 0, x:"-50%", y:"-50%" },
-            open: { scale: 1, x:"-50%", y:"-50%", transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] } },
-            closed: { scale: 0, x:"-50%", y:"-50%", transition: { duration: 0.4, ease: [0.32, 0, 0.67, 0] } }
+            initial: { scale: 0, x: "-50%", y: "-50%" },
+            open: { 
+                scale: 1, 
+                x: "-50%", 
+                y: "-50%", 
+                transition: { type: "spring", stiffness: 300, damping: 20 } 
+            },
+            closed: { 
+                scale: 0, 
+                x: "-50%", 
+                y: "-50%", 
+                transition: { duration: 0.2, ease: "easeOut" }
+            }
         }}
         initial="initial"
         animate={active ? "open" : "closed"}
-        className="h-[350px] w-[400px] absolute bg-white overflow-hidden pointer-events-none flex items-center justify-center rounded-2xl"
-        style={{top: '50%', left: '50%'}}
+        // Set a fixed height and dynamic width
+        className="h-[350px] w-auto absolute top-1/2 left-1/2 pointer-events-none overflow-hidden rounded-2xl"
     >
-      <div style={{top: index * -100 + "%"}} className="h-full w-full absolute transition-all duration-500" >
-        {
-          projects.map( (project, pIndex) => {
-            const { src, color } = project
-            return <div className="h-full w-full flex items-center justify-center" style={{backgroundColor: color}} key={`modal_${pIndex}`}>
-              <img src={`${src}`} width={300} height={0} alt="image" className='h-auto'/>
-            </div>
-          })
-        }
-      </div>
+        <img
+            src={src}
+            alt={title}
+            // Image height is 100%, width is auto to maintain aspect ratio
+            className="h-full w-auto"
+        />
     </motion.div>
   )
 }
 
-// --- Project Item Component (No changes needed here) ---
+// --- Project Item Component (No changes needed) ---
 const Project: React.FC<{
   index: number;
   title: string;
@@ -97,23 +103,20 @@ const Project: React.FC<{
 }
 
 
-// --- Main Project Section ---
+// --- Main Project Section (No changes needed) ---
 export default function ProjectSection() {
   const [modal, setModal] = useState({ active: false, index: 0 });
 
   return (
     <section id="work" className="w-full bg-black text-white py-20 md:py-32 relative mb-32">
       
-      {/* Main container with 80vw width and centered */}
       <div className="w-[80vw] mx-auto">
         
-        {/* Heading section */}
         <div className="text-left mb-16 px-4 md:px-8">
-            <h2 className="text-5xl md:text-7xl font-light" style={{ fontFamily: "'PP Editorial New', serif" }}>Recent Works</h2>
-            <p className="text-lg md:text-xl text-neutral-400 mt-4">The Arts of Maniac presents..</p>
+            <h2 className="text-6xl md:text-9xl font-light" style={{ fontFamily: "'PP Editorial New', serif" }}>Feat<span className="italic">u</span>red <span className="italic">Projects</span></h2>
+            <p className="text-xl md:text-2xl text-neutral-400 mt-4 italic">The Arts of Maniac presents..</p>
         </div>
 
-        {/* The list of projects now resides inside the 80vw container */}
         <div className='w-full'>
             {
               projects.map((project, index) => {
@@ -124,7 +127,6 @@ export default function ProjectSection() {
 
       </div>
 
-      {/* Modal remains outside to be positioned relative to the viewport */}
       <Modal modal={modal} projects={projects}/>
     </section>
   )

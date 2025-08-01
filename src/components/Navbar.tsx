@@ -122,7 +122,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
             className="hover:opacity-70 transition-opacity cursor-pointer py-2 px-3 sm:px-4"
             data-scroll-to="#work"
           >
-            WORK
+            PROJECT
           </span>
           <span 
             className="hover:opacity-70 transition-opacity cursor-pointer py-2 px-3 sm:px-4"
