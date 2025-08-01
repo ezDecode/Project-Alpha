@@ -13,6 +13,7 @@ import FooterSection from './components/FooterSection';
 gsap.registerPlugin(ScrollTrigger);
 
 const App: React.FC = () => {
+  // All state and other hooks remain unchanged.
   const [isLoading, setIsLoading] = useState(true);
   const [animationReady, setAnimationReady] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,7 +43,10 @@ const App: React.FC = () => {
   const lenisRef = useRef<Lenis | null>(null);
   useEffect(() => {
     if (lenisRef.current) return;
-    const lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
+    
+    // --- UPDATED: lerp value decreased for a smoother scroll ---
+    const lenis = new Lenis({ lerp: 0.07, smoothWheel: true }); 
+    
     lenisRef.current = lenis;
     const raf = (time: number) => { lenis.raf(time); requestAnimationFrame(raf); };
     requestAnimationFrame(raf);
@@ -75,10 +79,7 @@ const App: React.FC = () => {
       {!isLoading && (
         <>
           <HeroSection startAnimation={animationReady} isScrolled={isScrolled} isMobile={isMobile} />
-          
-          {/* --- UPDATED: isMobile prop is no longer passed here --- */}
           <AboutSection />
-          
           <ProjectSection isMobile={isMobile} />
           <FooterSection />
         </>

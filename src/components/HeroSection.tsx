@@ -9,7 +9,7 @@ import Navbar from './Navbar';
 import TextAnimate from './TextAnimate';
 import ImageTransition from './ImageTransition';
 
-// Letter and other inner components remain unchanged.
+// Inner components remain unchanged.
 interface LetterProps { char: string; isItalic: boolean; mousePos: React.RefObject<{ x: number; y: number; }>; variants: Variants; }
 const Letter = memo<LetterProps>(({ char, isItalic, mousePos, variants }) => {
   const letterRef = useRef<HTMLSpanElement>(null);
@@ -81,23 +81,26 @@ const HeroSection: React.FC<HeroSectionProps> = ({ startAnimation, isScrolled, i
   };
 
   return (
-    <div
-      ref={targetRef}
-      id="home"
-      className="panel relative h-screen w-screen overflow-hidden bg-[#FAF6E9]"
-      // --- UPDATED: All `style` and `mask-image` attributes have been removed ---
-    >
+    <div ref={targetRef} id="home" className="panel relative h-screen w-screen overflow-hidden bg-[#FAF6E9]">
       <Navbar isScrolled={isScrolled} isMobile={isMobile} />
       
-      {/* Inner Hero content remains unchanged */}
       <motion.div style={{ opacity, scale }} className="flex flex-col items-center justify-center h-full w-full relative z-10">
         <div className="text-center w-[90vw] md:w-[80vw] lg:w-[70vw] mx-auto relative">
           <motion.h1 ref={headingRef} className="text-black text-[11.5vw] sm:text-[3.85rem] md:text-[6rem] lg:text-[8.25rem] font-light text-center mb-4 mt-[15vh] sm:mt-[12vh] cursor-default flex flex-wrap justify-center items-center" style={{ fontFamily: "'PP Editorial New', serif", fontWeight: 300, lineHeight: '1.1', letterSpacing: '-0.03em' }} variants={containerVariants} initial="hidden" animate={startAnimation ? 'visible' : 'hidden'}>
-            {isMobile ? (<><span>Code in the Shadows</span><span className="w-full"></span><span>Build in the Light.</span></>) : (<>{wordsPart1.map((word, index) => (<React.Fragment key={`p1-${index}`}><span className="inline-flex">{word.split('').map((char, letterIndex) => (<Letter key={letterIndex} char={char} isItalic={isCharItalic(word, char)} mousePos={mousePos} variants={childVariants} />))}</span><span className="inline-block"> </span>{index === imageInsertionIndex && (<><motion.div className="relative lg:-translate-y-3 md:-translate-y-3 -translate-y-1 w-[15vw] h-[12vw] sm:w-24 sm:h-20 md:w-32 md:h-28 lg:w-48 lg:h-32 bg-neutral-800 rounded-full inline-flex overflow-hidden align-middle mx-1 sm:mx-2" variants={childVariants}><ImageTransition images={allImages} interval={1500} className="w-full h-full" /></motion.div><span className="inline-block"> </span></>)}</React.Fragment>))}<span className="inline-block w-full lg:w-auto">  </span>{wordsPart2.map((word, index) => (<React.Fragment key={`p2-${index}`}><span className="inline-flex">{word.split('').map((char, letterIndex) => (<Letter key={letterIndex} char={char} isItalic={isCharItalic(word, char)} mousePos={mousePos} variants={childVariants} />))}</span>{index < wordsPart2.length - 1 && <span className="inline-block"> </span>}</React.Fragment>))}</>)}
+            {isMobile ? (
+              <>{[...wordsPart1, ...wordsPart2].map((word, wordIndex) => ( <React.Fragment key={wordIndex}><span className="inline-flex">{word.split('').map((char, charIndex) => ( <span key={charIndex} className={isCharItalic(word, char) ? 'italic' : ''}>{char}</span>))}</span><span className="inline-block"> </span>{word === "Shadows" && <span className="w-full"></span>}</React.Fragment>))}</>
+            ) : (
+              <>{wordsPart1.map((word, index) => (<React.Fragment key={`p1-${index}`}><span className="inline-flex">{word.split('').map((char, letterIndex) => (<Letter key={letterIndex} char={char} isItalic={isCharItalic(word, char)} mousePos={mousePos} variants={childVariants} />))}</span><span className="inline-block"> </span>{index === imageInsertionIndex && (<><motion.div className="relative lg:-translate-y-3 md:-translate-y-3 -translate-y-1 w-[15vw] h-[12vw] sm:w-24 sm:h-20 md:w-32 md:h-28 lg:w-48 lg:h-32 bg-neutral-800 rounded-full inline-flex overflow-hidden align-middle mx-1 sm:mx-2" variants={childVariants}><ImageTransition images={allImages} interval={1500} className="w-full h-full" /></motion.div><span className="inline-block"> </span></>)}</React.Fragment>))}<span className="inline-block w-full lg:w-auto">  </span>{wordsPart2.map((word, index) => (<React.Fragment key={`p2-${index}`}><span className="inline-flex">{word.split('').map((char, letterIndex) => (<Letter key={letterIndex} char={char} isItalic={isCharItalic(word, char)} mousePos={mousePos} variants={childVariants} />))}</span>{index < wordsPart2.length - 1 && <span className="inline-block"> </span>}</React.Fragment>))}</>
+            )}
           </motion.h1>
-          <TextAnimate by="word" delay={0.8} duration={0.3} className="text-center font-polysans text-base sm:text-lg md:text-[2.15rem] font-tight px-4 sm:px-0" style={{ fontWeight: 400, color: 'black', lineHeight: '1.5' }} startAnimation={startAnimation}>The experience you'll never forget — designed by a self-taught student who breaks the rules, blends logic with creativity, and turns pixels into unforgettable.</TextAnimate>
+
+          <TextAnimate by="word" delay={0.8} duration={0.3} className="text-center font-polysans text-base sm:text-lg md:text-[2.15rem] font-tight px-4 sm:px-0" style={{ fontWeight: 400, color: 'black', lineHeight: '1.5' }} startAnimation={startAnimation}>
+            The experience you'll never forget — designed by a self-taught student who breaks the rules, blends logic with creativity, and turns pixels into unforgettable.
+          </TextAnimate>
         </div>
       </motion.div>
+      
+      {/* --- THE FIX IS HERE: Gradient Bridge div has been removed. --- */}
     </div>
   );
 };

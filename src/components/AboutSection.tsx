@@ -4,7 +4,7 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 import MagneticButton from './MagneticButton';
 
-// Inner components remain unchanged
+// Inner components remain unchanged.
 const Word: React.FC<{children: React.ReactNode; range: [number, number]; progress: MotionValue<number>;}> = React.memo(({ children, range, progress }) => {
   const opacity = useTransform(progress, range, [0.1, 1]);
   return <motion.span style={{ opacity }} className="relative">{children}</motion.span>;
@@ -36,24 +36,29 @@ const AboutSection: React.FC = () => {
   const headingElements = [ <span key="h-1">A</span>, <motion.div key="h-2" className="w-10 h-8 sm:w-12 sm:h-9 md:w-20 md:h-16 lg:w-28 lg:h-20 bg-neutral-800 rounded-lg inline-flex overflow-hidden align-middle -translate-y-1 lg:-translate-y-2" whileHover={{ scale: 1.6, rotate: -15 }} transition={imageHoverTransition}><img src="/assets/HeaderImage.png" alt="Pixelated decorative" className="w-full h-full object-cover"/></motion.div>, <span key="h-3">Full-Stack Devel<span className="italic">o</span>per</span>, <motion.div key="h-4" className="w-10 h-8 sm:w-12 sm:h-9 md:w-20 md:h-16 lg:w-28 lg:h-20 bg-neutral-800 rounded-lg inline-flex overflow-hidden align-middle -translate-y-1 lg:-translate-y-2" whileHover={{ scale: 1.6, rotate: 15 }} transition={imageHoverTransition}><img src="/assets/HeaderImageBW.png" alt="Sci-Fi decorative" className="w-full h-full object-cover"/></motion.div>, <span key="h-5">who brings <span className="italic">ideas</span> to life...</span>];
 
   return (
+    // FIX #1: The Framer Motion warning is addressed by ensuring the main <section> has the `relative` class.
     <section 
       id="about" 
-      className="relative bg-black pt-32 md:pt-40 pb-40 md:pb-48"
+      className="relative bg-black pt-20 md:pt-40 pb-40 md:pb-48"
     >
       <div className="relative z-10 w-[90vw] md:w-[70vw] lg:w-[60vw] mx-auto flex flex-col items-center justify-center gap-12 md:gap-16">
         <h2 
           ref={headingRef} 
-          // --- UPDATED: Added margin-top class here ---
           className="relative w-full text-white text-[10vw] sm:text-5xl md:text-7xl lg:text-8xl font-editorial font-light leading-tight text-center flex flex-wrap justify-center items-center gap-x-2 sm:gap-x-3 gap-y-1 sm:gap-y-1.5 mt-[20%]"
           style={{fontFamily: "'PP Editorial New', serif", fontWeight: 300, lineHeight: '1.2'}}
         >
           {headingElements.map((element, index) => {
             const start = index / headingElements.length;
+            
+            // FIX #2: Replaced the incorrect `words.length` with `headingElements.length`.
+            // This ensures the animation is calculated based on the correct array, fixing the ReferenceError crash.
             const end = start + 1 / headingElements.length;
+            
             return <Word key={index} progress={headingScrollYProgress} range={[start, end]}>{element}</Word>;
           })}
         </h2>
         
+        {/* Rest of the component remains the same */}
         <div className="w-full md:w-[80vw] lg:w-[60vw]">
           <ScrollRevealParagraph text="I'm a passionate full-stack developer crafting high-performance web applications with precision and creativity. I transform complex challenges into elegant digital solutions using React, Node.js, and cutting-edge modern architecture." />
         </div>
