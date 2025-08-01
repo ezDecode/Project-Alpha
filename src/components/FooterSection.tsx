@@ -4,15 +4,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import MagneticButton from './MagneticButton'; 
 
-// --- Main Footer Component ---
 const FooterSection: React.FC = () => {
-  // Social link component remains the same
   const SocialLink: React.FC<{ href: string; children: React.ReactNode }> = ({ href, children }) => (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex items-center gap-2 text-xl md:text-2xl text-neutral-400 hover:text-white transition-colors"
+      className="group flex items-center gap-2 text-lg sm:text-xl md:text-2xl text-neutral-400 hover:text-white transition-colors"
       style={{ fontFamily: "'PolySans', sans-serif", fontWeight: 400 }}
     >
       <span>{children}</span>
@@ -24,7 +22,7 @@ const FooterSection: React.FC = () => {
         strokeWidth="2" 
         strokeLinecap="round" 
         strokeLinejoin="round" 
-        className="w-6 h-6 inline-block transition-transform duration-300 ease-in-out group-hover:-rotate-45"
+        className="w-5 h-5 sm:w-6 sm:h-6 inline-block transition-transform duration-300 ease-in-out group-hover:-rotate-45"
       >
         <path d="M5 12h14M12 5l7 7-7 7" />
       </svg>
@@ -32,26 +30,24 @@ const FooterSection: React.FC = () => {
   );
 
   return (
-    // Set height to 100vh and make it a relative container
     <footer className="relative h-screen bg-[#141414] text-white">
       
-      {/* Vertically and horizontally centered content */}
       <div className="w-full h-full flex items-center justify-center">
-        <div className="relative text-right w-[80vw] mx-auto">
+        <div className="relative text-right w-[90vw] md:w-[80vw] mx-auto">
           <h2
-            className="text-[10vw] md:text-[8vw] font-medium leading-none"
+            className="text-[13vw] sm:text-[10vw] md:text-[8vw] font-medium leading-none"
             style={{ fontFamily: "'PP Editorial New', serif", fontWeight: 300 }}
           >
-            <div className="flex justify-end items-center gap-x-4 md:gap-x-6">
+            <div className="flex justify-end items-center gap-x-3 sm:gap-x-4 md:gap-x-6">
               <span>Let's</span>
               <motion.div
-                  className="w-[14.5vw] h-[9.5vw] max-w-[200px] max-h-[135px] bg-neutral-800 rounded-xl inline-flex overflow-hidden align-middle -translate-y-1"
+                  className="w-[20vw] h-[13vw] sm:w-[14.5vw] sm:h-[9.5vw] max-w-[150px] max-h-[100px] md:max-w-[200px] md:max-h-[135px] bg-neutral-800 rounded-lg sm:rounded-xl inline-flex overflow-hidden align-middle -translate-y-1"
                   whileHover={{ scale: 1.15, rotate: -10 }}
                   transition={{ type: "spring", stiffness: 300, damping: 10 }}
               >
                   <img
                       src="/assets/HeaderImageBW.png" 
-                      alt="decorative image"
+                      alt="decorative"
                       className="w-full h-full object-cover"
                   />
               </motion.div>
@@ -61,7 +57,7 @@ const FooterSection: React.FC = () => {
               <span className="block italic">Together</span>
             </div>
           </h2>
-          <div className="mt-12 flex justify-end gap-8 md:gap-12">
+          <div className="mt-8 sm:mt-12 flex flex-col items-end sm:flex-row sm:justify-end gap-4 sm:gap-8 md:gap-12">
             <SocialLink href="https://github.com">GitHub</SocialLink>
             <SocialLink href="https://linkedin.com">LinkedIn</SocialLink>
             <SocialLink href="https://twitter.com">Twitter</SocialLink>
@@ -69,15 +65,14 @@ const FooterSection: React.FC = () => {
         </div>
       </div>
       
-      {/* Absolutely positioned bottom navigation bar */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80vw] flex justify-between items-center text-sm md:text-base text-neutral-400 font-light border-t border-neutral-700 py-6">
-        <div className='flex flex-col sm:flex-row gap-2 sm:gap-4'>
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90vw] md:w-[80vw] flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm md:text-base text-neutral-400 font-light border-t border-neutral-700 py-4 sm:py-6 gap-4 sm:gap-0">
+        <div className='flex flex-col sm:flex-row gap-2 sm:gap-4 text-center sm:text-left'>
           <span>© 2024 Akash Choudhury</span>
           <span>All Rights Reserved</span>
         </div>
         <MagneticButton
            onClick={() => window.location.href = 'mailto:ezdecode@gmail.com'}
-           className="bg-black-600 border-2 text-white px-8 py-4 rounded-full"
+           className="bg-black-600 border-2 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-sm sm:text-base"
         >
            Get in Touch
         </MagneticButton>
