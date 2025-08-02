@@ -49,7 +49,7 @@ const MobileMenu: React.FC<{onClose: () => void}> = ({onClose}) => {
     <motion.div variants={menuVariants} initial="closed" animate="open" exit="closed" className="fixed inset-0 bg-black bg-opacity-95 backdrop-blur-sm z-40 flex flex-col items-center justify-center">
       <nav className="flex flex-col items-center gap-8">
         {navLinks.map((link, i) => (
-          <motion.div key={link.title} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0, transition: { delay: 0.3 + i * 0.1 } }} className="text-white text-4xl font-light cursor-pointer" style={{ fontFamily: "'PP Editorial New', serif" }} data-scroll-to={link.href.startsWith("#") ? link.href : undefined} onClick={() => handleLinkClick(link.href)}>
+          <motion.div key={link.title} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0, transition: { delay: 0.3 + i * 0.1 } }} className="text-white text-5xl font-light cursor-pointer" style={{ fontFamily: "'PolySans', sans-serif" }} data-scroll-to={link.href.startsWith("#") ? link.href : undefined} onClick={() => handleLinkClick(link.href)}>
             {link.title}
           </motion.div>
         ))}

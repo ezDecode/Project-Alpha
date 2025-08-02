@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import MagneticButton from './MagneticButton'; 
+import MagneticButton from './MagneticButton';
 
 const FooterSection: React.FC = () => {
   // --- UPDATED: Font size is now smaller on mobile ---
@@ -16,14 +16,14 @@ const FooterSection: React.FC = () => {
       style={{ fontFamily: "'PolySans', sans-serif", fontWeight: 400 }}
     >
       <span>{children}</span>
-      <svg 
-        xmlns="http://www.w3.org/2000/svg" 
-        viewBox="0 0 24 24" 
-        fill="none" 
-        stroke="currentColor" 
-        strokeWidth="2" 
-        strokeLinecap="round" 
-        strokeLinejoin="round" 
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         className="w-4 h-4 sm:w-6 sm:h-6 inline-block transition-transform duration-300 ease-in-out group-hover:-rotate-45"
       >
         <path d="M5 12h14M12 5l7 7-7 7" />
@@ -33,7 +33,7 @@ const FooterSection: React.FC = () => {
 
   return (
     <footer className="relative h-screen bg-[#141414] text-white">
-      
+
       <div className="w-full h-full flex items-center justify-center">
         <div className="relative text-right w-[90vw] md:w-[80vw] mx-auto">
           <h2
@@ -43,15 +43,15 @@ const FooterSection: React.FC = () => {
             <div className="flex justify-end items-center gap-x-3 sm:gap-x-4 md:gap-x-6">
               <span>Let's</span>
               <motion.div
-                  className="w-[20vw] h-[13vw] sm:w-[14.5vw] sm:h-[9.5vw] max-w-[150px] max-h-[100px] md:max-w-[200px] md:max-h-[135px] bg-neutral-800 rounded-lg sm:rounded-xl inline-flex overflow-hidden align-middle -translate-y-1"
-                  whileHover={{ scale: 1.15, rotate: -10 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 10 }}
+                className="w-[20vw] h-[13vw] sm:w-[14.5vw] sm:h-[9.5vw] max-w-[150px] max-h-[100px] md:max-w-[200px] md:max-h-[135px] bg-neutral-800 rounded-lg sm:rounded-xl inline-flex overflow-hidden align-middle -translate-y-1"
+                whileHover={{ scale: 1.15, rotate: -10 }}
+                transition={{ type: "spring", stiffness: 300, damping: 10 }}
               >
-                  <img
-                      src="/assets/HeaderImageBW.png" 
-                      alt="decorative"
-                      className="w-full h-full object-cover"
-                  />
+                <img
+                  src="/assets/HeaderImageBW.png"
+                  alt="decorative"
+                  className="w-full h-full object-cover"
+                />
               </motion.div>
               <span>Work</span>
             </div>
@@ -67,17 +67,18 @@ const FooterSection: React.FC = () => {
           </div>
         </div>
       </div>
-      
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90vw] md:w-[80vw] flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm md:text-base text-neutral-400 font-light border-t border-neutral-700 py-4 sm:py-6 gap-4 sm:gap-0">
-        <div className='flex flex-col sm:flex-row gap-2 sm:gap-4 text-center sm:text-left'>
+
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90vw] md:w-[80vw] flex flex-row justify-between items-center text-xs sm:text-sm md:text-base text-neutral-400 font-light border-t border-neutral-700 py-4 sm:py-6">
+        {/* This inner div can still stack on the smallest screens for readability, which is good practice. */}
+        <div className='flex flex-col sm:flex-row gap-2 sm:gap-4 text-left sm:text-left'>
           <span>© 2024 Akash Choudhury</span>
           <span>All Rights Reserved</span>
         </div>
         <MagneticButton
-           onClick={() => window.location.href = 'mailto:ezdecode@gmail.com'}
-           className="bg-black-600 border-2 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg"
+          onClick={() => window.location.href = 'mailto:ezdecode@gmail.com'}
+          className="bg-black-600 border-2 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg" // <-- Applied your requested font-size change
         >
-           Get in Touch
+          Get in Touch
         </MagneticButton>
       </div>
     </footer>
