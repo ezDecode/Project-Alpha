@@ -82,7 +82,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ startAnimation, isScrolled, i
 
   return (
     <div ref={targetRef} id="home" className="panel relative h-screen w-screen overflow-hidden bg-[#FAF6E9]">
-      <Navbar isScrolled={isScrolled} isMobile={isMobile} />
+      {/* --- FIX: Removed the `isMobile` prop as Navbar no longer accepts it. --- */}
+      <Navbar isScrolled={isScrolled} />
       
       <motion.div style={{ opacity, scale }} className="flex flex-col items-center justify-center h-full w-full relative z-10">
         <div className="text-center w-[90vw] md:w-[80vw] lg:w-[70vw] mx-auto relative">
@@ -99,8 +100,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ startAnimation, isScrolled, i
           </TextAnimate>
         </div>
       </motion.div>
-      
-      {/* --- THE FIX IS HERE: Gradient Bridge div has been removed. --- */}
     </div>
   );
 };
