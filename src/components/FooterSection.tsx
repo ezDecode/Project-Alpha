@@ -5,12 +5,14 @@ import { motion } from 'framer-motion';
 import MagneticButton from './MagneticButton'; 
 
 const FooterSection: React.FC = () => {
+  // --- UPDATED: Font size is now smaller on mobile ---
   const SocialLink: React.FC<{ href: string; children: React.ReactNode }> = ({ href, children }) => (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex items-center gap-2 text-lg sm:text-xl md:text-2xl text-neutral-400 hover:text-white transition-colors"
+      // Changed to `text-sm` on mobile, scaling up to `md:text-xl`
+      className="group flex items-center gap-2 text-sm sm:text-lg md:text-xl text-neutral-400 hover:text-white transition-colors"
       style={{ fontFamily: "'PolySans', sans-serif", fontWeight: 400 }}
     >
       <span>{children}</span>
@@ -22,7 +24,7 @@ const FooterSection: React.FC = () => {
         strokeWidth="2" 
         strokeLinecap="round" 
         strokeLinejoin="round" 
-        className="w-5 h-5 sm:w-6 sm:h-6 inline-block transition-transform duration-300 ease-in-out group-hover:-rotate-45"
+        className="w-4 h-4 sm:w-6 sm:h-6 inline-block transition-transform duration-300 ease-in-out group-hover:-rotate-45"
       >
         <path d="M5 12h14M12 5l7 7-7 7" />
       </svg>
@@ -57,7 +59,8 @@ const FooterSection: React.FC = () => {
               <span className="block italic">Together</span>
             </div>
           </h2>
-          <div className="mt-8 sm:mt-12 flex flex-col items-end sm:flex-row sm:justify-end gap-4 sm:gap-8 md:gap-12">
+          {/* --- UPDATED: Flex direction is now a wrapping row, aligned to the end --- */}
+          <div className="mt-8 sm:mt-12 flex flex-row flex-wrap justify-end items-center gap-x-6 gap-y-2 sm:gap-x-8 md:gap-x-12">
             <SocialLink href="https://github.com">GitHub</SocialLink>
             <SocialLink href="https://linkedin.com">LinkedIn</SocialLink>
             <SocialLink href="https://twitter.com">Twitter</SocialLink>
@@ -72,7 +75,7 @@ const FooterSection: React.FC = () => {
         </div>
         <MagneticButton
            onClick={() => window.location.href = 'mailto:ezdecode@gmail.com'}
-           className="bg-black-600 border-2 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-sm sm:text-base"
+           className="bg-black-600 border-2 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg"
         >
            Get in Touch
         </MagneticButton>
