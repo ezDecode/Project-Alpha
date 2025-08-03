@@ -9,7 +9,7 @@ import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import ProjectSection from './components/ProjectSection';
 import FooterSection from './components/FooterSection';
-import DesktopSuggestionModal from './components/DesktopSuggestionModal'; // --- IMPORTED ---
+import DesktopSuggestionModal from './components/DesktopSuggestionModal';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,8 +18,6 @@ const App: React.FC = () => {
   const [animationReady, setAnimationReady] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  
-  // --- STATE FOR THE NEW MODAL ---
   const [showSuggestionModal, setShowSuggestionModal] = useState(false);
 
   useEffect(() => {
@@ -27,9 +25,8 @@ const App: React.FC = () => {
       const mobile = window.innerWidth < 768;
       setIsMobile(mobile);
       
-      // --- LOGIC TO SHOW MODAL ONCE PER SESSION ---
-      const hasSeenSuggestion = sessionStorage.getItem('hasSeenDesktopSuggestion');
-      if (mobile && !hasSeenSuggestion) {
+      // --- UPDATED LOGIC: Modal visibility now depends only on the device type, not session storage. ---
+      if (mobile) {
         setShowSuggestionModal(true);
       }
     };
@@ -77,15 +74,13 @@ const App: React.FC = () => {
     };
   }, []);
 
-  // --- HANDLER TO CLOSE THE MODAL AND SET SESSION STORAGE ---
+  // --- UPDATED HANDLER: Removed session storage logic. ---
   const handleCloseSuggestionModal = () => {
     setShowSuggestionModal(false);
-    sessionStorage.setItem('hasSeenDesktopSuggestion', 'true');
   };
 
   return (
     <main className="bg-black">
-      {/* --- RENDER THE MODAL --- */}
       <DesktopSuggestionModal isOpen={showSuggestionModal} onClose={handleCloseSuggestionModal} />
 
       <AnimatePresence mode='wait' onExitComplete={() => setAnimationReady(true)}>
