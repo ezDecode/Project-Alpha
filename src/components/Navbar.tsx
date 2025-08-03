@@ -91,20 +91,21 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
               </AnimatePresence>
             </motion.div>
             
-            {/* --- UPDATE: Hamburger size increased by ~10% --- */}
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)} 
-              className="bg-black rounded-full w-16 h-16 flex items-center justify-center z-50" // Was w-14 h-14
+              // The `w-14 h-14` and `rounded-full` classes ensure this is a perfect circle.
+              className="bg-black rounded-full w-14 h-14 flex items-center justify-center z-50"
             >
-              {/* --- UPDATE: Inner icon and animation values adjusted for new size --- */}
-              <div className="w-7 h-7 flex flex-col justify-center items-center gap-2"> {/* Was w-6 h-6 gap-1.5 */}
+              {/* --- UPDATE: Container and line sizes increased by ~15% for a more prominent icon --- */}
+              <div className="w-7 h-7 flex flex-col justify-center items-center gap-[7px]"> {/* Was w-6 h-6, gap-1.5 */}
+                {/* Animation transform `y` is adjusted to the new gap size for a clean rotation */}
                 <motion.div 
-                  animate={{ rotate: isMenuOpen ? 45 : 0, y: isMenuOpen ? 5 : 0 }} // Was y: 4
+                  animate={{ rotate: isMenuOpen ? 45 : 0, y: isMenuOpen ? 4.5 : 0 }} // Was y: 4
                   transition={{ duration: 0.3, ease: "easeInOut" }} 
                   className="w-full h-[2px] bg-white"
                 ></motion.div>
                 <motion.div 
-                  animate={{ rotate: isMenuOpen ? -45 : 0, y: isMenuOpen ? -5 : 0 }} // Was y: -4
+                  animate={{ rotate: isMenuOpen ? -45 : 0, y: isMenuOpen ? -4.5 : 0 }} // Was y: -4
                   transition={{ duration: 0.3, ease: "easeInOut" }} 
                   className="w-full h-[2px] bg-white"
                 ></motion.div>
