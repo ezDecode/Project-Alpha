@@ -53,7 +53,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ isMobile }) => {
       <div className="w-[90vw] md:w-[80vw] mx-auto">
         <div className="text-left mb-12 sm:mb-16 px-4 md:px-8">
             <h2 className="text-5xl sm:text-6xl md:text-9xl font-light" style={{ fontFamily: "'PP Editorial New', serif" }}>Feat<span className="italic">u</span>red Projec<span className="italic">t</span>s</h2>
-            <p className="text-lg sm:text-xl md:text-2xl text-neutral-400 mt-2 sm:mt-4 italic">The Arts of Maniac presents..</p>
+            <p className="text-lg sm:text-xl md:text-2xl text-neutral-400 mt-2 sm:mt-4">The Arts of Maniac presents..</p>
         </div>
         <div className='w-full'>
             {projects.map((project, index) => (

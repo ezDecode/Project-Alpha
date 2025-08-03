@@ -67,7 +67,7 @@ const FooterSection: React.FC = () => {
 
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90vw] md:w-[80vw] flex flex-row justify-between items-center text-xs sm:text-sm md:text-base text-neutral-400 font-light border-t border-neutral-700 py-4 sm:py-6">
         <div className='flex flex-col sm:flex-row gap-2 sm:gap-4 text-left sm:text-left'>
-          <span>© 2024 Akash Choudhury</span>
+          <span>© 2025 Akash Choudhury</span>
           <span>All Rights Reserved</span>
         </div>
         <MagneticButton

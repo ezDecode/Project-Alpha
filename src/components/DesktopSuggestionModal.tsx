@@ -41,7 +41,7 @@ const DesktopSuggestionModal: React.FC<DesktopSuggestionModalProps> = ({ isOpen,
           >
             <h3 
               className="text-2xl font-medium text-white"
-              style={{ fontFamily: "'PP Editorial New', serif" }}
+              style={{ fontFamily: "'PolySans', serif" }}
             >
               For a Better Experience
             </h3>
