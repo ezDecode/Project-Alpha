@@ -39,16 +39,7 @@ const AboutSection: React.FC = () => {
   const headingRef = useRef<HTMLHeadingElement>(null);
   const { scrollYProgress: headingScrollYProgress } = useScroll({ target: headingRef, offset: ['start 0.9', 'end 0.6'] });
   const imageHoverTransition = { type: "spring" as const, stiffness: 400, damping: 12 };
-  
-  /*
-    --- IMAGE SIZE INCREASE ---
-    The width and height classes have been increased by ~15% for larger images on desktop.
-    Previous sm size: sm:w-16 sm:h-12 (64x48px)
-    Previous md size: md:w-20 md:h-16 (80x64px)
-    
-    Current sm size: sm:w-18 sm:h-14 (72x56px)
-    Current md size: md:w-24 md:h-18 (96x72px)
-  */
+
   const decorativeImageClasses = "hidden sm:inline-flex sm:w-18 sm:h-14 md:w-24 md:h-18 bg-neutral-800 rounded-lg overflow-hidden align-middle -translate-y-1";
 
   const headingElements = [ 
