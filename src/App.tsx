@@ -21,15 +21,7 @@ const App: React.FC = () => {
   const [showSuggestionModal, setShowSuggestionModal] = useState(false);
 
   useEffect(() => {
-    const checkDeviceSize = () => {
-      const mobile = window.innerWidth < 768;
-      setIsMobile(mobile);
-      
-      // --- UPDATED LOGIC: Modal visibility now depends only on the device type, not session storage. ---
-      if (mobile) {
-        setShowSuggestionModal(true);
-      }
-    };
+    const checkDeviceSize = () => setIsMobile(window.innerWidth < 768);
     checkDeviceSize();
     window.addEventListener('resize', checkDeviceSize);
     return () => window.removeEventListener('resize', checkDeviceSize);
@@ -39,6 +31,16 @@ const App: React.FC = () => {
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsScrolled(latest > 50);
   });
+  
+  useEffect(() => {
+    const hasSeenSuggestion = sessionStorage.getItem('hasSeenDesktopSuggestion');
+    
+    if (isMobile && isScrolled && !hasSeenSuggestion) {
+      setShowSuggestionModal(true);
+      sessionStorage.setItem('hasSeenDesktopSuggestion', 'true');
+    }
+  }, [isScrolled, isMobile]);
+
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -73,8 +75,7 @@ const App: React.FC = () => {
       lenisRef.current = null;
     };
   }, []);
-
-  // --- UPDATED HANDLER: Removed session storage logic. ---
+  
   const handleCloseSuggestionModal = () => {
     setShowSuggestionModal(false);
   };
