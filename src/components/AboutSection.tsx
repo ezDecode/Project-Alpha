@@ -16,11 +16,9 @@ const ScrollRevealParagraph: React.FC<{ text: string }> = ({ text }) => {
   return (
     <p
       ref={targetRef}
-      /*
-        --- LINE HEIGHT REDUCTION ---
-        Changed `leading-relaxed` to `leading-snug` to decrease the vertical spacing between lines.
-      */
-      className="relative flex w-full flex-wrap justify-center leading-tight text-tight text-center text-neutral-300"
+      // I have corrected the class from 'leading-tight text-tight' to just 'leading-tight'
+      // as `leading` controls line-height. Font size is handled below.
+      className="relative flex w-full flex-wrap justify-center leading-tight text-center text-neutral-300"
       style={{ fontSize: 'clamp(1.3rem, 3vw, 2rem)' }}
     >
       {words.map((word, index) => {
@@ -60,11 +58,11 @@ const AboutSection: React.FC = () => {
         </div>
 
         <motion.div ref={ctaRef} style={{ opacity: buttonOpacity, y: buttonY }} className="relative w-full mt-6">
-          <div className="flex flex-row items-center justify-center gap-4">
-            <MagneticButton className="w-auto px-8 py-3.5 border border-white/80 rounded-full text-white font-polysans font-medium text-sm sm:text-base">
+          <div className="flex flex-row flex-nowrap items-center justify-center gap-3 sm:gap-4">
+            <MagneticButton className="w-auto px-6 sm:px-8 py-3.5 border border-white/80 rounded-full text-white font-polysans font-medium text-sm sm:text-base">
               Explore My Work
             </MagneticButton>
-            <MagneticButton className="w-auto px-8 py-3.5 border border-white/80 rounded-full text-white font-polysans font-medium text-sm sm:text-base">
+            <MagneticButton className="w-auto px-6 sm:px-8 py-3.5 border border-white/80 rounded-full text-white font-polysans font-medium text-sm sm:text-base">
               View Resume
             </MagneticButton>
           </div>
