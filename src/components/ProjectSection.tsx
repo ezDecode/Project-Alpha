@@ -40,15 +40,11 @@ const Project: React.FC<{index: number; title: string; src: string; isMobile: bo
   )
 }
 
-// --- START: The fix is here ---
-// We define the props interface specifically for this component.
 interface ProjectSectionProps {
   isMobile: boolean;
 }
 
-// And use the correct interface here, instead of HeroSectionProps.
 const ProjectSection: React.FC<ProjectSectionProps> = ({ isMobile }) => { 
-// --- END: The fix is here ---
 
   const [modal, setModal] = useState({ active: false, index: 0 });
 

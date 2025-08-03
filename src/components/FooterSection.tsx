@@ -5,13 +5,11 @@ import { motion } from 'framer-motion';
 import MagneticButton from './MagneticButton';
 
 const FooterSection: React.FC = () => {
-  // --- UPDATED: Font size is now smaller on mobile ---
   const SocialLink: React.FC<{ href: string; children: React.ReactNode }> = ({ href, children }) => (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      // Changed to `text-sm` on mobile, scaling up to `md:text-xl`
       className="group flex items-center gap-2 text-sm sm:text-lg md:text-xl text-neutral-400 hover:text-white transition-colors"
       style={{ fontFamily: "'PolySans', sans-serif", fontWeight: 400 }}
     >
@@ -59,7 +57,6 @@ const FooterSection: React.FC = () => {
               <span className="block italic">Together</span>
             </div>
           </h2>
-          {/* --- UPDATED: Flex direction is now a wrapping row, aligned to the end --- */}
           <div className="mt-8 sm:mt-12 flex flex-row flex-wrap justify-end items-center gap-x-6 gap-y-2 sm:gap-x-8 md:gap-x-12">
             <SocialLink href="https://github.com">GitHub</SocialLink>
             <SocialLink href="https://linkedin.com">LinkedIn</SocialLink>
@@ -69,14 +66,13 @@ const FooterSection: React.FC = () => {
       </div>
 
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90vw] md:w-[80vw] flex flex-row justify-between items-center text-xs sm:text-sm md:text-base text-neutral-400 font-light border-t border-neutral-700 py-4 sm:py-6">
-        {/* This inner div can still stack on the smallest screens for readability, which is good practice. */}
         <div className='flex flex-col sm:flex-row gap-2 sm:gap-4 text-left sm:text-left'>
           <span>© 2024 Akash Choudhury</span>
           <span>All Rights Reserved</span>
         </div>
         <MagneticButton
           onClick={() => window.location.href = 'mailto:ezdecode@gmail.com'}
-          className="bg-black-600 border-2 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg" // <-- Applied your requested font-size change
+          className="bg-black-600 border-2 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg"
         >
           Get in Touch
         </MagneticButton>

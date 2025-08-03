@@ -9,18 +9,30 @@ import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import ProjectSection from './components/ProjectSection';
 import FooterSection from './components/FooterSection';
+import DesktopSuggestionModal from './components/DesktopSuggestionModal'; // --- IMPORTED ---
 
 gsap.registerPlugin(ScrollTrigger);
 
 const App: React.FC = () => {
-  // All state and other hooks remain unchanged.
   const [isLoading, setIsLoading] = useState(true);
   const [animationReady, setAnimationReady] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  
+  // --- STATE FOR THE NEW MODAL ---
+  const [showSuggestionModal, setShowSuggestionModal] = useState(false);
 
   useEffect(() => {
-    const checkDeviceSize = () => setIsMobile(window.innerWidth < 768);
+    const checkDeviceSize = () => {
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+      
+      // --- LOGIC TO SHOW MODAL ONCE PER SESSION ---
+      const hasSeenSuggestion = sessionStorage.getItem('hasSeenDesktopSuggestion');
+      if (mobile && !hasSeenSuggestion) {
+        setShowSuggestionModal(true);
+      }
+    };
     checkDeviceSize();
     window.addEventListener('resize', checkDeviceSize);
     return () => window.removeEventListener('resize', checkDeviceSize);
@@ -43,15 +55,11 @@ const App: React.FC = () => {
   const lenisRef = useRef<Lenis | null>(null);
   useEffect(() => {
     if (lenisRef.current) return;
-    
-    // --- UPDATED: lerp value decreased for a smoother scroll ---
-    const lenis = new Lenis({ lerp: 0.07, smoothWheel: true }); 
-    
+    const lenis = new Lenis({ lerp: 0.07, smoothWheel: true });
     lenisRef.current = lenis;
     const raf = (time: number) => { lenis.raf(time); requestAnimationFrame(raf); };
     requestAnimationFrame(raf);
     gsap.ticker.lagSmoothing(0);
-    
     const handleNavClick = (e: Event) => {
       const target = e.target as HTMLElement;
       const href = target.getAttribute('data-scroll-to');
@@ -62,7 +70,6 @@ const App: React.FC = () => {
       }
     };
     document.addEventListener('click', handleNavClick);
-    
     return () => {
       document.removeEventListener('click', handleNavClick);
       lenis.destroy();
@@ -70,8 +77,17 @@ const App: React.FC = () => {
     };
   }, []);
 
+  // --- HANDLER TO CLOSE THE MODAL AND SET SESSION STORAGE ---
+  const handleCloseSuggestionModal = () => {
+    setShowSuggestionModal(false);
+    sessionStorage.setItem('hasSeenDesktopSuggestion', 'true');
+  };
+
   return (
     <main className="bg-black">
+      {/* --- RENDER THE MODAL --- */}
+      <DesktopSuggestionModal isOpen={showSuggestionModal} onClose={handleCloseSuggestionModal} />
+
       <AnimatePresence mode='wait' onExitComplete={() => setAnimationReady(true)}>
         {isLoading && <Preloader />}
       </AnimatePresence>
